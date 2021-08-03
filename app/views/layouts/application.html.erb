@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PawsomesApp</title>
+    <title>Pawsomes Community</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <!-- Navbar -->
+    <%= render "/shared/navbar" %>
+    
+    <!-- Flash messages -->
     <% flash.each do |key, message| %>
       <div class="alert <%= flash_class(key) %> alert-dismissible fade show text-center" role="alert">
         <%= message %>
@@ -20,6 +24,11 @@
       </div>
     <% end %>
     
-    <%= yield %>
+    <!-- Main content -->
+    <main class="container"
+      ><%= yield %>
+    </main>
+    
+    <!-- Footer -->
   </body>
 </html>
