@@ -13,5 +13,12 @@
  *= require_tree .
  *= require_self
  */
-
+ @import "custom";
  @import "bootstrap/scss/bootstrap";
+
+//  Customised:
+
+// For flash-alert
+.alert-dismissible {
+  padding-left: $close-font-size + $alert-padding-x * 2;
+}
