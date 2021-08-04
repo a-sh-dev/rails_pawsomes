@@ -1,26 +1,23 @@
 /*! Custom Font */
 
 // Recursive Font
-@import url(https://fonts.googleapis.com/css2?family=Recursive:wght@900);
+@import url(https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;700);
 
 // @import url(https://fonts.googleapis.com/css2?family=Recursive:wght@300;600;900);
 
 // Karla
 @import url(https://fonts.googleapis.com/css2?family=Karla:wght@400;800);
 
-// Montserrat Font
-@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700);
-
 // Font overides
 $font-family-base: Karla;
 $headings-font-family: Recursive;
 
 // $enable-grid-classes:false;
-$primary:#083358;
-$secondary:#F67280;
-$success:#0074E4;
-$danger:#FF4057;
-$info:#74DBEF;
-$warning:#FC3C3C;
+$primary:#2e3c3d;
+$secondary:#ef8c7d;
+$success:#9cd0ca;
+$danger:#ed7569;
+$info:#b0b5a6;
+$warning:#fed67e;
 $light:#F2F2F0;
-$dark:#072247;
+$dark:#2e3c3d;
