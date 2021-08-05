@@ -54,3 +54,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Additional gems - third party apps
 gem 'devise'
 gem 'simple_form'
+gem 'country_state_select'
