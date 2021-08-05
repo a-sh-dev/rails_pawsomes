@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
   
   # GET static pages
-  get 'about', to: 'pages#about'
-  get 'contact', to: 'pages#contact'
-  get 'account', to: 'pages#account'
+  get '/about', to: 'pages#about', as: "about"
+  get '/contact', to: 'pages#contact', as: "contact"
+  get '/account', to: 'pages#account', as: "account"
 
 end
