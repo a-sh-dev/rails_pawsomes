@@ -1,86 +1,54 @@
 <h1>Register</h1>
 <h3 class="mb-5">...and become Pawsomes!</h3>
 
-<section class="row justify-content-center">
-  <div class="col col-md-6">
+<section class="row justify-content-center card bg-light border-primary p-3 p-md-5">
+  <div class="col col-md-7">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <!-- >
-      <%= render "devise/shared/error_messages", resource: resource %> %>
-      <-->
       <%= f.error_notification %>
       
-      <p class="h4">Your Basic Information</p>
+      <p class="h5 pt-sm-3">Your Basic Information</p>
       <div class="form-group mb-3">
         <%= f.input :username, label: "Pick a username", placeholder: "username", hint: "3 to 12 characters with optional underscores only", class: "form-control" %>
       </div>
 
       <div class="form-group mb-3">
-        <%= f.input :email, label: "E-mail", required: true, placeholder: "myemail@email.com", input_html: { autocomplete: "email" } %>
+        <%= f.input :email, label: "E-mail", required: true, placeholder: "myemail@email.com", input_html: { autocomplete: "email" }, class: "form-control" %>
       </div>
 
       <div class="form-group mb-3">
-        <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password"} %>
+        <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password"}, class: "form-control" %>
       </div>
 
       <div class="form-group mb-3">
-        <%= f.input :password_confirmation, input_html: { autocomplete: "new-password"} %>
+        <%= f.input :password_confirmation, input_html: { autocomplete: "new-password"}, class: "form-control" %>
       </div>
 
       <div class="form-group mb-3">
-        <%= f.input :pet_owner, as: :boolean, checked_value: true, unchecked_value: false, label: "Check if you a pet owner", class: "custom-control-input" %>
+        <p class="h5">Are you a pet owner?</p>
+        <%= f.input :pet_owner, as: :boolean, checked_value: true, unchecked_value: false, label: "Yes, I'm a real pet owner!", class: "form-check-input" %>
       </div>
-
-      <p class="h4">Your Location</p>
+      
+      <!-- Nested Location Attributes -->
+      <p class="h5">Your Location</p>
       <%= f.simple_fields_for :location, Location.new do |loc| %>
-        <div class="form-group mb-3">
-          <%= loc.input :country  %>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <%= loc.input :country, label: false, placeholder: "Country", class: "form-control" %>
+          </div>
+          
+          <div class="form-group col-md-4">
+            <%= loc.input :state, label: false, placeholder: "State", class: "form-control" %>
+          </div>
+          
+          <div class="form-group col-md-4">
+            <%= loc.input :city, label: false, placeholder: "City", class: "form-control" %>
+          </div>
         </div>
       <% end %>
-
-
-      <div class="form-group mb-3">
+      <div class="form-actions mb-3">
         <%= f.button :submit, "Register", class: "btn btn-primary" %>
-      </div>
-
-
-
-
-      <div class="">
+        <%= render "devise/shared/links" %>
       </div>
     <% end %>
-    <%= render "devise/shared/links" %>
   </div>
 </section>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

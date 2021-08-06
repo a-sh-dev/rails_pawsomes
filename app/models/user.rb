@@ -13,5 +13,6 @@ class User < ApplicationRecord
 
   validates :bio, length: { maximum: 100, too_long: "Only %{count} max characters allowed" }, allow_blank: true
 
+
 end
 
