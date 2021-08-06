@@ -28,7 +28,7 @@ body {
 }
 
 .navbar-bg {
-  background-color: $base;
+  background-color: $info;
 }
 
 .brand-logo {
@@ -39,4 +39,10 @@ body {
 // For flash-alert
 .alert-dismissible {
   padding-left: $close-font-size + $alert-padding-x * 2;
+}
+
+// Typography related styles
+.txt_small {
+  font-size: .85rem;
+  color: $tertiary;
 }
