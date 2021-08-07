@@ -14,5 +14,16 @@ class User < ApplicationRecord
   validates :bio, length: { maximum: 100, too_long: "Only %{count} max characters allowed" }, allow_blank: true
 
 
+  # User model methods
+  def get_location
+    "#{self.location.country}, ".capitalize + "#{self.location.city}".capitalize
+  end
+
+  # private
+
+  # def age 
+  #   ((Time.now - self.date_written.to_time) / 1.year.seconds).floor
+  # end 
+
 end
 
