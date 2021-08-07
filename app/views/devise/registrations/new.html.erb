@@ -2,7 +2,7 @@
 <h3 class="mb-5">...and become Pawsomes!</h3>
 
 <section class="row justify-content-center card bg-light border-primary p-3 p-md-5">
-  <div class="col col-md-7">
+  <div class="col">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
       
@@ -23,9 +23,11 @@
         <%= f.input :password_confirmation, input_html: { autocomplete: "new-password"}, class: "form-control" %>
       </div>
 
+      <p class="h5">Are you a pet owner?</p>
       <div class="form-group mb-3">
-        <p class="h5">Are you a pet owner?</p>
-        <%= f.input :pet_owner, as: :boolean, checked_value: true, unchecked_value: false, label: "Yes, I'm a real pet owner!", class: "form-check-input" %>
+        <div class="form-check pl-0">
+          <%= f.input :pet_owner, as: :boolean, checked_value: true, unchecked_value: false, label: "Yes, I'm a pet owner!", class: "form-check-input" %>
+        </div>
       </div>
       
       <!-- Nested Location Attributes -->
@@ -33,18 +35,19 @@
       <%= f.simple_fields_for :location, Location.new do |loc| %>
         <div class="form-row">
           <div class="form-group col-md-4">
-            <%= loc.input :country, label: false, placeholder: "Country", class: "form-control" %>
+            <%= loc.input_field :country, label: false, placeholder: "Country", class: "form-control" %>
           </div>
           
           <div class="form-group col-md-4">
-            <%= loc.input :state, label: false, placeholder: "State", class: "form-control" %>
+            <%= loc.input_field :state, label: false, placeholder: "State", class: "form-control" %>
           </div>
           
           <div class="form-group col-md-4">
-            <%= loc.input :city, label: false, placeholder: "City", class: "form-control" %>
+            <%= loc.input_field :city, label: false, placeholder: "City", class: "form-control" %>
           </div>
         </div>
       <% end %>
+      
       <div class="form-actions mb-3">
         <%= f.button :submit, "Register", class: "btn btn-primary" %>
         <%= render "devise/shared/links" %>
