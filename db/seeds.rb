@@ -6,6 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Pet Categories
+categories = [
+  "Cat", "Dog", "Rabbit", "Bird", "Aquarium", "Reptile", "Others"  
+]
+
+
+
+# Generate seeds
 if User.count == 0
   User.create(username:"Tester0", email: "test@test.com", password: "123456", password_confirmation: "123456" )
+end
+
+if Category.count == 0
+  categories.each do |category|
+    Category.create(name: category)
+    puts "Created #{category} pet category"
+  end
 end

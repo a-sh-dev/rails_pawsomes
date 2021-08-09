@@ -4,6 +4,5 @@ class Location < ApplicationRecord
   # Location validations
   validates :country, :city, presence: true 
 
-
   
 end
