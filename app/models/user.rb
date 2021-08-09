@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   # User model methods
   def get_location
-    "#{self.location.country}, ".capitalize + "#{self.location.city}".capitalize
+    "#{self.location.city}, #{self.location.country}"
   end
 
   # private
