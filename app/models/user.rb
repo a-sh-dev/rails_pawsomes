@@ -13,13 +13,22 @@ class User < ApplicationRecord
 
   validates :bio, length: { maximum: 100, too_long: "Only %{count} max characters allowed" }, allow_blank: true
 
+  # Callout methods
+  before_save :lowercase_username
+
+
 
   # User model methods
   def get_location
     "#{self.location.city}, #{self.location.country}"
   end
 
-  # private
+  private
+
+  def lowercase_username
+    self.username.downcase!
+  end
+  
 
   # def age 
   #   ((Time.now - self.date_written.to_time) / 1.year.seconds).floor
