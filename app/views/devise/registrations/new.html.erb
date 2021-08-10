@@ -23,10 +23,10 @@
         <%= f.input :password_confirmation, input_html: { autocomplete: "new-password"}, class: "form-control" %>
       </div>
 
-      <p class="h5">Are you a pet owner?</p>
+      <p class="h5">Do you currently own a pet?</p>
       <div class="form-group mb-3">
         <div class="form-check pl-0">
-          <%= f.input :pet_owner, as: :boolean, checked_value: true, unchecked_value: false, label: "Yes, I'm a pet owner!", class: "form-check-input" %>
+          <%= f.input :pet_owner, as: :boolean, checked_value: true, unchecked_value: false, label: "Yes", class: "form-check-input" %>
         </div>
       </div>
       

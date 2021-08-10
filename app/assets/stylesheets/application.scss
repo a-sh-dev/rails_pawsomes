@@ -19,13 +19,23 @@
 //  Customised:
 
 // Body background
-body {
-  width: 100vw;
-  height: 100vh;
+// body {
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: $bg-base;
+// }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: $bg-base;
-  // background-image: linear-gradient(to top, #e3dccc 0%, #dfe1e0 100%);
-  // background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
+
+.content-wrapper {
+  flex: 1;
+}
+
 
 .navbar-bg {
   background-color: $info;
@@ -42,7 +52,18 @@ body {
 }
 
 // Typography related styles
-.txt_small {
-  font-size: .85rem;
+.txt-small {
+  font-size: .70rem;
   color: $tertiary;
+}
+
+.txt-footer {
+  font-size: .75rem;
+  letter-spacing: .15rem;
+}
+
+.subtitle {
+  font-family: $font-family-base;
+  font-size: 2rem;
+  color: $secondary;
 }
