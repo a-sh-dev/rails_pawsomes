@@ -1,13 +1,13 @@
-<main class="container h-100 my-5">  
-  <div class="row d-flex justify-content-center align-items-center">
-    <div class="col-12 col-md-6 col-lg-5">
-      <h1 class="display-4">Welcome to the Pawsomes community!</h1>
-      <h2 class="subtitle">When pet-sharing <br> is pet-caring</h2>
-      <p class="lead">Not everyone has the privilege to raise a pet in their home. Pawsomes offers an online community where users who currently own a pet (real pet owners) can share their pet <em>paw-renting</em> journey while the other users (pet owners wannabes) can give their support by being <em>sup-paw-ters</em> through interactions and funding.</p>
-      <%= link_to "Register", new_user_registration_path, class: "btn btn-primary btn-lg mb-5" %>
-    </div>
-    <div class="col-12 col-md-6 col-lg-7 mb-5">
+<main class="container vh-100 my-5">  
+  <div class="row justify-content-center align-items-center">
+    <div class="row">
       <%= image_tag "pw_illust_01", class: "w-100 mb-5", alt: "Pawesomes Illustration" %>
+    </div>
+    <div class="col-12 col-md-10 text-center">
+      <h1 class="display-4">When pet-sharing is pet-caring,</h1>
+      <h2 class="subtitle">it is Pawsomes!</h2>
+      <p class="col-11 col-md-10 mt-3 mx-auto">Not everyone has the privilege to raise a pet in their home. Pawsomes offers an online community where users who currently own a pet (real pet owners) can share their pet <em>paw-renting</em> journey while others (pet owners wannabes) can give their support by being <em>sup-paw-ters</em> through interactions and funding.</p>
+      <%= link_to "Become Pawesomes!", new_user_registration_path, class: "btn btn-primary btn-lg my-3" %>
     </div>
   </div>
 </main>
