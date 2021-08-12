@@ -10,7 +10,7 @@
         
         <p class="h5 pt-sm-3">Your Basic Information</p>
         <div class="form-group mb-3">
-          <%= f.input :username, label: "Pick a username", placeholder: "username", hint: "3 to 12 characters with optional underscores only", class: "form-control" %>
+          <%= f.input :username, label: "Pick a username", placeholder: "username", hint: "3 to 20 characters with optional underscores only", class: "form-control" %>
         </div>
   
         <div class="form-group mb-3">
@@ -37,11 +37,11 @@
         <%= f.simple_fields_for :location, Location.new do |loc| %>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <%= loc.input_field :country, required: true, label: false, placeholder: "Country", class: "form-control" %>
+              <%= loc.input_field :country, required: true, label: false, placeholder: "Country", hint: "no spaces and alphabets only are allowed", class: "form-control" %>
             </div>
             
             <div class="form-group col-md-6">
-              <%= loc.input_field :city, required: true, label: false, placeholder: "City", class: "form-control" %>
+              <%= loc.input_field :city, required: true, label: false, placeholder: "City", hint: "no spaces and alphabets only are allowed", class: "form-control" %>
             </div>
           </div>
         <% end %>
