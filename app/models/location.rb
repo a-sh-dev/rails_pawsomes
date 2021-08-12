@@ -8,6 +8,8 @@ class Location < ApplicationRecord
   before_save :lowercase_location_inputs
 
 
+  # ! NOTE: Ideally there should be seperate Country & City models created to prevent duplicates
+
   private
 
   def lowercase_location_inputs

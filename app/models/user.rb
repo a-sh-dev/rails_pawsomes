@@ -16,7 +16,12 @@ class User < ApplicationRecord
   # Callout methods
   before_save :lowercase_username
 
-
+  # User's roles
+  enum role: {
+    admin: 0,
+    owner: 1,
+    regular: 2,
+  }
 
   # User model methods
   def get_location
