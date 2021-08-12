@@ -1,5 +1,5 @@
 class Location < ApplicationRecord
-  belongs_to :user
+  has_many :users
 
   # Location validations
   validates :country, :city, presence: true 

@@ -8,14 +8,14 @@
 
 # Pet Categories
 categories = [
-  "Cat", "Dog", "Rabbit", "Bird", "Aquarium", "Reptile", "Others"  
+  "Cat", "Dog", "Small Mammal", "Bird", "Aquarium", "Reptile", "Others"  
 ]
 
 
 
 # Generate seeds
 if User.count == 0
-  User.create(username:"Tester0", email: "test@test.com", password: "123456", password_confirmation: "123456" )
+  User.create(username:"Bobo", email: "test0@test.com", password: "123456", password_confirmation: "123456" )
 end
 
 if Category.count == 0

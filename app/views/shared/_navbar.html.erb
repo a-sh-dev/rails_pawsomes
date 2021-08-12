@@ -1,9 +1,11 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary" id="main_nav">
   <div class="container">
     <!-- Nav Branding -->
-    <%= link_to root_path, class: "navbar-brand mr-1 mb-1 mt-0" do %>
-      <%= image_tag "ps_logo2_full", class: "brand-logo", alt: "Pawesomes logo" %>
-    <% end %>
+    <div class="navbar-brand mr-1 mb-1 mt-0">
+      <%= link_to root_path do %>
+        <%= image_tag "ps_logo2_full", class: "brand-logo", alt: "Pawesomes logo" %>
+      <% end %>
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,12 +41,9 @@
         <% else %>
 
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "btn btn-outline-secondary mx-3" %>
+            <%= link_to "Login", new_user_session_path, class: "btn btn-secondary mx-3" %>
           </li>
 
-          <li class="nav-item">
-            <%= link_to "Register", new_user_registration_path, class: "btn btn-outline-secondary" %>
-          </li>
         <% end %>
       </ul>
     </div>
