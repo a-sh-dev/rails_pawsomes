@@ -1,5 +1,5 @@
 class Location < ApplicationRecord
-  has_many :users
+  has_many :users, dependent: :destroy
 
   # Location validations
   validates :country, :city, presence: true 

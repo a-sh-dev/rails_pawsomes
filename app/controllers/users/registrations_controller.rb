@@ -14,6 +14,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super do |resource|
+      # assign user's role upon registration
+      if params[:user][:pet_owner] == "true"
+        resource.update(role: 1, pet_owner: true)
+      else
+        resource.update(role: 2, pet_owner: false)
+      end 
+      # allow location nested attributes
       resource.build_location
     end
   end
