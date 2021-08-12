@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   # Model relationships
-  has_one :location, dependent: :destroy
+  belongs_to :location
   accepts_nested_attributes_for :location
 
   # Include default devise modules. Others available are:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_10_125934) do
+ActiveRecord::Schema.define(version: 2021_08_12_051051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,10 +33,8 @@ ActiveRecord::Schema.define(version: 2021_08_10_125934) do
     t.string "country"
     t.string "state"
     t.string "city"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,11 +49,12 @@ ActiveRecord::Schema.define(version: 2021_08_10_125934) do
     t.boolean "pet_owner"
     t.string "paypal_me"
     t.string "bio"
-    t.string "role", limit: 20
+    t.bigint "location_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["location_id"], name: "index_users_on_location_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "breeds", "categories"
-  add_foreign_key "locations", "users"
+  add_foreign_key "users", "locations"
 end
