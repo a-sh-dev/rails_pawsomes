@@ -6,17 +6,24 @@ class Location < ApplicationRecord
 
   # Callout methods
   before_save :lowercase_location_inputs
+  before_save :remove_whitespace
 
 
-  # ! NOTE: Ideally there should be seperate Country & City models created to prevent duplicates
+  # ! NOTE: Ideally there should be seperate Country & City models created to prevent database duplicates
 
   private
 
-  def lowercase_location_inputs
-    self.country.downcase!
-    self.state.downcase! if self.state.present?
-    self.city.downcase!
-  end
+    def lowercase_location_inputs
+      self.country.downcase!
+      self.state.downcase! if self.state.present?
+      self.city.downcase!
+    end
+
+    def remove_whitespace
+      self.country = self.country.strip
+      self.city = self.city.strip
+    end
+  
 
 
 

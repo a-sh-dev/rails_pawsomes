@@ -1,5 +1,7 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_form_vars, only: [:new, :edit]
 
   # GET /pets or /pets.json
   def index
@@ -66,4 +68,10 @@ class PetsController < ApplicationController
     def pet_params
       params.require(:pet).permit(:owner_id, :breed_id, :name, :dob, :gender, :bio, :instagram)
     end
+
+    def set_form_vars
+      @categories = Category.all
+    end
+    
+
 end
