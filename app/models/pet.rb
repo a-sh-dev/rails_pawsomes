@@ -3,6 +3,18 @@ class Pet < ApplicationRecord
   belongs_to :owner, foreign_key: "owner_id", class_name: "User"
   belongs_to :breed
 
+  # Validations
+  validates :name, presence: true, format: { with: /\A[a-zA-Z][a-zA-Z ]+\z/, message: "only alphabets and spaces are allowed" } 
+  
+  validates :instagram, length: { in: 3..30 }, format: { with: /\A[a-zA-Z0-9_.]+\z/, message: "no spaces or symbols except periods and underscores are allowed" }, allow_blank: true 
+
+  validates :bio, length: { maximum: 100, too_long: "Only %{count} max characters allowed" }, allow_blank: true
+
+  validates :gender, :dob, presence: true
+
+  # Callout methods
+  before_save :remove_whitespace
+
   # Pet's gender
   enum gender: {
     male: 0,
@@ -12,8 +24,11 @@ class Pet < ApplicationRecord
 
   private
 
-  def display_pet_age 
-    ((Time.now - self.dob.to_time) / 1.year.seconds).floor
-  end 
+    def remove_whitespace
+      self.name = self.name.strip
+      self.city = self.city.strip
+    end
+
+  
 
 end

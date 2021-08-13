@@ -32,9 +32,9 @@ class User < ApplicationRecord
 
   private
 
-  def lowercase_username
-    self.username.downcase!
-  end
+    def lowercase_username
+      self.username.downcase!
+    end
   
 
 
