@@ -90,7 +90,31 @@ if Breed.count == 0
   dog2 = Breed.create({ name: "dachshund", category_id: 2 })
 end
 
-# Pets
-# if Pet.count == 0
+# Pets -- gender: {male: 0, female: 1, unknown: 2}
+if Pet.count == 0
+  pet_cat1 = Pet.create(
+    {
+      owner_id: u_owner1.id,
+      breed_id: cat1.id,
+      name: "nyomi",
+      dob: "01-01-2019",
+      gender: 0,
+      bio: "blue crossed eyed who can't get fat",
+      instagram: "dididodo_"
+    }
+  )
 
-# end
+  pet_cat2 = Pet.create(
+    {
+      owner_id: u_owner2.id,
+      breed_id: cat1.id,
+      name: "cenil",
+      dob: "01-07-2021",
+      gender: 1,
+      bio: "My dad is a munchkin cat, and mum is a persian cat, aren't I cute?",
+      instagram: "jellibins"
+    }
+  )
+end
+
+
