@@ -2,6 +2,8 @@ class User < ApplicationRecord
   # Model relationships
   belongs_to :location
   accepts_nested_attributes_for :location
+  
+  has_many :pets, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -34,7 +36,6 @@ class User < ApplicationRecord
     self.username.downcase!
   end
   
-
   # def age 
   #   ((Time.now - self.date_written.to_time) / 1.year.seconds).floor
   # end 

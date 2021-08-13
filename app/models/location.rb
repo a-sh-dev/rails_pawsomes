@@ -2,7 +2,7 @@ class Location < ApplicationRecord
   has_many :users, dependent: :destroy
 
   # Location validations
-  validates :country, :city, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: "no spaces or symbols alphabets only are allowed" } 
+  validates :country, :city, presence: true, format: { with: /\A[a-zA-Z][a-zA-Z ]+\z/, message: "alphabets only are allowed" } 
 
   # Callout methods
   before_save :lowercase_location_inputs
