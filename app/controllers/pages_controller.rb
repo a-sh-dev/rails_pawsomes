@@ -13,5 +13,8 @@ class PagesController < ApplicationController
   # user account related
   def account
   end
+  
+  def pawlour
+  end
 
 end

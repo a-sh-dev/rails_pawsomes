@@ -1,19 +1,24 @@
+<div class="col-11 col-md-8 card bg-light border-primary p-3 p-md-5">
+  <%= simple_form_for(@pet) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :dob %>
+      <%= f.input :gender, as: :radio_buttons, collection: [["Male", "male"], ["Female", "female"], ["Unknown", "unknown"]] %>
+  
+      <!-- Nested Breed & Category Attributes -->
+      <%= f.association :breed %>
+  
+      <p class="h5">Tell us about your pet</p>
+      <%= f.input :bio, as: :text, hint: "100 characters limit" %>
+      <%= f.input :instagram, label: "If your pet has its own Instagram account", hint: "No spaces or symbols except periods and underscores are allowed" %>
+    </div>
+  
+    <div class="form-actions">
+      <%= f.button :submit, "Add Pet", class: "btn btn-primary" %>
+    </div>  
 
-<%= simple_form_for(@pet) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.association :owner %>
-    <%= f.association :breed %>
-    <%= f.input :name %>
-    <%= f.input :dob %>
-    <%= f.input :gender %>
-    <%= f.input :bio %>
-    <%= f.input :instagram %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+  <% end %>
+</div> 
