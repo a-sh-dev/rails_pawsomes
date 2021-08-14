@@ -1,15 +1,19 @@
-<main class="container min-vh-100 my-5">  
+<section class="container min-vh-100 my-5">  
   <div class="row justify-content-center align-items-center">
+    <div class="col-12 col-md-10 text-center mb-5">
+      <header class= "mb-5">
+        <p class="lead mb-0">W H E N</p>
+        <h1 class="display-4">Pet<em>sharing</em> is Pet<em>caring</em></h1>
+        <h2 class="subtitle">...it is Pawsomes!</h2>
+      </header>
+      <p class="col-11 col-md-10 mt-3 mx-auto">Not everyone has the privilege to raise a pet in their home. <br>Pawsomes offers an online community where users who currently own a pet (real pet owners) can share their pet <em>paw-renting</em> journey while others (especially pet owners wannabes) can give their support by being pet <em>sup-paw-ters</em> through interactions and funding.</p>
+      <%= link_to "Find out more", about_path, class: "btn btn-primary btn-lg my-3 mb-5" %>
+    </div>
+    
     <div class="row">
       <%= image_tag "pw_illust_01", class: "w-auto mb-5", alt: "Pawesomes Illustration" %>
     </div>
-    <div class="col-12 col-md-10 text-center">
-      <h1 class="display-4">When pet-sharing is pet-caring</h1>
-      <h2 class="subtitle">...it is Pawsomes!</h2>
-      <p class="col-11 col-md-10 mt-3 mx-auto">Not everyone has the privilege to raise a pet in their home. Pawsomes offers an online community where users who currently own a pet (real pet owners) can share their pet <em>paw-renting</em> journey while others (especially pet owners wannabes) can give their support by being pet <em>sup-paw-ters</em> through interactions and funding.</p>
-      <%= link_to "Become Pawesomes!", new_user_registration_path, class: "btn btn-primary btn-lg my-3 mb-5" %>
-    </div>
   </div>
-</main>
+</section>
 <%= render "/shared/search" %>
 <%= render "/shared/featured" %>
