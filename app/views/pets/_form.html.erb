@@ -4,16 +4,37 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   
     <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :dob %>
-      <%= f.input :gender, as: :radio_buttons, collection: [["Male", "male"], ["Female", "female"], ["Unknown", "unknown"]] %>
+      
+      <div class="form-group mb-3">
+        <%= f.input :name, label: "Pet name", placeholder: "Pawlie Pawsome", hint: "Only alphabets and spaces are allowed", class: "form-control" %>
+      </div>    
   
       <!-- Nested Breed & Category Attributes -->
-      <%= f.association :breed %>
+      <%= f.simple_fields_for :breed, Breed.new do |breed| %>
+        <div class="form-row">
+          <%= breed.fields_for :category, Category.new do |category| %>
+          <div class="form-group col-md-4">
+            <%= category.input :name do %>
+              <%= category.select :name, @categories.map { |c| [c.name, c.id] }, required: true, label: "Animal type", class: "custom-select" %>
+            <% end %>
+          </div>
+          <% end %>
+          
+          <div class="form-group col-md-8">
+            <%= breed.input :name, required: true, label: "Breed", placeholder: "Domestic short hair", hint: "Type 'unknown', if unsure", class: "form-control" %>
+          </div>
+        </div>
+      <% end %>      
+            
+      <%= f.input :dob, as: :date, start_year: Date.today.year - 30, end_year: Date.today.year, order: [:month, :year] %>
+
+      <div class="custom-control custom-radio custom-control-inline mb-3">
+        <%= f.input :gender, as: :radio_buttons, collection: [["Male", "male"], ["Female", "female"], ["Unknown", "unknown"]], class: "custom-control-input" %>
+      </div> 
   
-      <p class="h5">Tell us about your pet</p>
-      <%= f.input :bio, as: :text, hint: "100 characters limit" %>
-      <%= f.input :instagram, label: "If your pet has its own Instagram account", hint: "No spaces or symbols except periods and underscores are allowed" %>
+      <%= f.input :bio, as: :text, label: "Short bio of your pet", hint: "100 characters limit", required: false %>
+
+      <%= f.input :instagram, label: "If your pet has its own Instagram account", hint: "No spaces or symbols except periods and underscores are allowed", required: false %>
     </div>
   
     <div class="form-actions">

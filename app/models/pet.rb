@@ -16,6 +16,8 @@ class Pet < ApplicationRecord
 
   # Callout methods
   before_save :remove_whitespace
+  before_save :lowercase_username
+  # before_save :check_existing_breed
 
   # Pet's gender
   enum gender: {
@@ -30,6 +32,20 @@ class Pet < ApplicationRecord
       self.bio = self.bio.strip
     end
 
+    def lowercase_name
+      self.name.downcase!
+    end
+
+    # Use existing breed record if exists, else, save new record
+    def check_existing_breed
+      if new_breed = Breed.find_by(name: breed.name)
+        self.breed = new_breed
+      else
+        self.breed.save!
+      end
+      
+      # self.breed << Breed.find_or_create_by(name: self.breed_name, category_id: self.breed.category_id)
+    end
   
 
 end
