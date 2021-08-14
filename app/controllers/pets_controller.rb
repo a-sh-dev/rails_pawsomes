@@ -15,7 +15,7 @@ class PetsController < ApplicationController
   # GET /pets/new
   def new
     @pet = Pet.new
-    # @pet.breed.build
+    @pet.build_breed
   end
 
   # GET /pets/1/edit
@@ -67,7 +67,7 @@ class PetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_params
-      params.require(:pet).permit(:owner_id, :breed_id, :name, :dob, :gender, :bio, :instagram, breed_attributes: [:category, :name])
+      params.require(:pet).permit(:owner_id, :name, :dob, :gender, :bio, :instagram, breed_attributes: [:name, category_attributes: [:name]])
     end
 
     def set_form_vars
