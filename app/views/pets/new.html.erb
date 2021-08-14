@@ -1,5 +1,13 @@
-<h1>New Pet</h1>
-
-<%= render 'form', pet: @pet %>
-
-<%= link_to 'Back', pets_path %>
+<section class="container my-5">
+  <header class="mb-5">
+    <h1 class="display-4">Add a new pet</h1>
+    <h2 class="subtitle">Show your pet to the world!</h2>
+  </header>
+  <main class="row justify-content-center align-items-center">
+    <%= render 'form', pet: @pet %>
+    <hr class="mt-5">
+  </main>
+  <div class="row my-5">
+    <%= link_to "Back", pets_path, class: "btn btn-outline-primary my-3 mb-5" %>
+  </div>
+</section>

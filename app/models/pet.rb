@@ -2,6 +2,8 @@ class Pet < ApplicationRecord
   # Model Associations
   belongs_to :owner, foreign_key: "owner_id", class_name: "User"
   belongs_to :breed
+  accepts_nested_attributes_for :breed
+
 
   # Validations
   validates :name, presence: true, format: { with: /\A[a-zA-Z][a-zA-Z ]+\z/, message: "only alphabets and spaces are allowed" } 
@@ -17,16 +19,15 @@ class Pet < ApplicationRecord
 
   # Pet's gender
   enum gender: {
-    male: 0,
-    female: 1,
-    unknown: 2,
+    male: 0, female: 1, unknown: 2,
   }
 
   private
 
     def remove_whitespace
       self.name = self.name.strip
-      self.city = self.city.strip
+      self.instagram = self.instagram.strip
+      self.bio = self.bio.strip
     end
 
   
