@@ -12,5 +12,18 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :pet_owner, :role, location_attributes: [:country, :state, :city]])
   end
 
+  # redirect users aftter signed in
+  def after_sign_in_path_for(resource)
+    # super(resource)
+    
+    # redirect Owner to Add pets
+    if resource.role == "owner"
+      new_pet_path
+    else
+      # redirect the rest to pets index 
+      pets_path
+    end
+  end
+
 
 end

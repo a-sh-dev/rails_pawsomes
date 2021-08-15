@@ -16,12 +16,13 @@ class Location < ApplicationRecord
   private
 
     def lowercase_location_inputs
-      self.country.downcase!
+      self.country.downcase! if self.state.present?
       self.state.downcase! if self.state.present?
-      self.city.downcase!
+      self.city.downcase! if self.state.present?
     end
 
     def remove_whitespace
+      if self == !nil
       self.country = self.country.strip
       self.city = self.city.strip
     end

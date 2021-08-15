@@ -30,26 +30,31 @@
       <!-- User Related Links -->
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
+
           <li class="nav-item">
-            <%= link_to "Pets Pawlour", pawlour_path, class: "btn btn-outline-secondary" %>
+            <%= link_to "Pets Pawlour", pawlour_path, class: "btn btn-outline-secondary mx-1" %>
           </li>
 
           <li class="nav-item">
-            <%= link_to "My Account", account_path, class: "btn btn-outline-secondary mx-3" %>
+            <%= link_to "My Account", account_path, class: "btn btn-outline-secondary mx-1" %>
           </li>
           
           <li class="nav-item">
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary" %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary mx-1" %>
           </li>
 
         <% else %>
 
           <li class="nav-item">
-            <%= link_to "Register", new_user_registration_path, class: "btn btn-secondary" %>
+            <%= link_to "Paw Pets", pets_path, class: "btn btn-outline-secondary mx-1" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Register", new_user_registration_path, class: "btn btn-secondary mx-1" %>
           </li>
           
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "btn btn-secondary mx-3" %>
+            <%= link_to "Login", new_user_session_path, class: "btn btn-secondary mx-1" %>
           </li>
           
 

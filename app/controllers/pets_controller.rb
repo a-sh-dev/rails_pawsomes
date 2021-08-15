@@ -1,7 +1,7 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_form_vars, only: [:new, :edit]
+  before_action :set_form_vars, only: [:new, :edit, :create]
 
   # GET /pets or /pets.json
   def index
@@ -17,11 +17,11 @@ class PetsController < ApplicationController
     @pet = Pet.new
     @pet.build_breed
   end
-
+  
   # GET /pets/1/edit
   def edit
   end
-
+  
   # POST /pets or /pets.json
   def create
     @pet = current_user.pets.new(pet_params)
@@ -67,7 +67,7 @@ class PetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_params
-      params.require(:pet).permit(:owner_id, :name, :dob, :gender, :bio, :instagram, breed_attributes: [:name, category_attributes: [:name]])
+      params.require(:pet).permit(:owner_id, :name, :dob, :gender, :bio, :instagram, breed_attributes: [:name, :category_id])
     end
 
     def set_form_vars

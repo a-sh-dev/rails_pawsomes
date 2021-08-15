@@ -150,16 +150,16 @@ if Pet.count == 0
     }
   )
 
-  pet_dog1 = Pet.create(
-    {
-      owner_id: u_owner3.id,
-      breed_id: cat1.id,
-      name: "cosette",
-      dob: "14-10-2015",
-      gender: 0,
-      bio: "I love to snuggle and enjoy my meowmy's warmth in the morning when she works. (Pawrent: Celine)",
-    }
-  )
+  # pet_dog1 = Pet.create(
+  #   {
+  #     owner_id: u_owner3.id,
+  #     breed_id: cat1.id,
+  #     name: "cosette",
+  #     dob: "14-10-2015",
+  #     gender: 0,
+  #     bio: "I love to snuggle and enjoy my meowmy's warmth in the morning when she works. (Pawrent: Celine)",
+  #   }
+  # )
 end
 
 
