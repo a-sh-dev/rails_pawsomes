@@ -16,7 +16,7 @@ class Pet < ApplicationRecord
 
   # Callout methods
   before_save :remove_whitespace
-  before_save :lowercase_username
+  before_save :lowercase_name
   # before_save :check_existing_breed
 
   # Pet's gender

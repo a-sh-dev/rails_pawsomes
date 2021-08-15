@@ -13,10 +13,14 @@
       <%= f.simple_fields_for :breed, Breed.new do |breed| %>
         <div class="form-row">
 
-          <div class="form-group col-md-4">
-            <%= breed.association :category, collection: Category.order(:id), label: "Animal Category", required: true %>
-          </div>
-
+          <%= breed.fields_for :category, Category.new do |category| %>
+            <div class="form-group col-md-4">
+              <%= category.input :id, label: "Animal type" do %>
+                <%= category.select :id, @categories.map { |c| [c.name, c.id] }, required: true %>
+              <% end %>
+            </div>
+          <% end %>
+          
           <div class="form-group col-md-8">
             <%= breed.input :name, required: true, label: "Breed", placeholder: "Domestic short hair", hint: "Type 'unknown', if unsure", class: "form-control" %>
           </div>
