@@ -4,12 +4,11 @@
     <h2 class="subtitle">Show your pet to the world!</h2>
   </header>
 
-  <main class="row justify-content-center align-items-center">
+  <main class="row align-items-center">
     <%= render 'form', pet: @pet %>
-    <hr class="mt-5">
   </main>
 
-  <footer class="row my-5">
-    <%= link_to "Back", pets_path, class: "btn btn-outline-primary my-3 mb-5" %>
+  <footer class="row my-3">
+    <%= link_to "Back", pets_path, class: "btn btn-outline-primary my-3 mb-3" %>
   </footer>
 </section>

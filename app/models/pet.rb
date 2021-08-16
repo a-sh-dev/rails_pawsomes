@@ -4,6 +4,7 @@ class Pet < ApplicationRecord
   belongs_to :breed
   accepts_nested_attributes_for :breed
   has_one :category, through: :breed
+  has_one_attached :profile_photo
 
   delegate :category, to: :breed
 

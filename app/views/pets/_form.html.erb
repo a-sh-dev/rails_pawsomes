@@ -4,7 +4,6 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   
     <div class="form-inputs">
-      
       <div class="form-group mb-3">
         <%= f.input :name, label: "Pet name", placeholder: "Pawlie Pawsome", hint: "Only alphabets and spaces are allowed", class: "form-control" %>
       </div>    
@@ -13,7 +12,7 @@
       <%= f.simple_fields_for :breed, @pet.breed do |breed| %>
         <%= breed.error_notification %>
         <%= breed.error_notification message: breed.object.errors[:base].to_sentence if breed.object.errors[:base].present? %>
-        <div class="form-row">
+        <div class="form-row mb-0">
 
           <div class="form-group col-md-4">
             <%= breed.association :category, collection: Category.order(:id), label: "Animal Category", required: true %>
@@ -33,11 +32,22 @@
         <%= f.input :gender, as: :radio_buttons, collection: [["Male", "male"], ["Female", "female"], ["Unknown", "unknown"]], class: "form-check-input", wrapper_html: { class: "form-check-inline" } %>
       </div> 
   
-      <%= f.input :bio, as: :text, label: "Short bio of your pet", hint: "100 characters limit", required: false %>
+      <div class="form-group mb-3">
+        <%= f.input :bio, as: :text, label: "Short bio of your pet", hint: "100 characters limit", required: false, class: "form-control" %>
+      </div>
 
-      <%= f.input :instagram, label: "If your pet has its own Instagram account", hint: "No spaces or symbols except periods and underscores are allowed", required: false %>
+      <div class="form-group mb-3">
+        <%= f.input :instagram, label: "If your pet has its own Instagram account", hint: "No spaces or symbols except periods and underscores are allowed", required: false, class: "form-control" %>
+      </div>
+
+      <!-- Pet profile photo attribute -->
+      <div class="form-group mb-5">
+        <%= f.input :profile_photo, as: :file, label: "Your pet's best profile photo", required: false, class: "form-control-file" %>
+      </div>
+
+
     </div>
-  
+
     <div class="form-actions">
       <%= f.button :submit, "Add Pet", class: "btn btn-primary" %>
     </div>  
