@@ -23,8 +23,9 @@ class Location < ApplicationRecord
 
     def remove_whitespace
       if self == !nil
-      self.country = self.country.strip
-      self.city = self.city.strip
+        self.country = self.country.strip
+        self.city = self.city.strip
+      end
     end
   
     # ! Not working yet, ideally to check existing record, if new, save
@@ -42,7 +43,5 @@ class Location < ApplicationRecord
     #   else
     #     curent_user.params([:location][:city])
     #   end
-    # end
-    
-
+    # end 
 end
