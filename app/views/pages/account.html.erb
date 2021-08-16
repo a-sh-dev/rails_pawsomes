@@ -1,2 +1,37 @@
-<h1>My Account</h1>
-<p>to be updated - consist of account changes / edit</p>
+<section class="container my-5">
+  <header class="mb-5">
+    <h1 class="display-4">Account Settings</h1>
+    <h2 class="subtitle">All about your registered account</h2>
+  </header>
+  <main>
+    <div class="row">
+      <article class="col">
+        <h5>Account Details</h5>
+          <div>
+            <p>Name</p>
+            <p class="lead"><%= current_user&.username %></p>
+          </div>
+          <p>Email <span><%= current_user&.email %></span></p>
+          <p>Location <span><%= current_user&.display_location %></span></p>
+        
+        <h5>Profile</h5>
+          <% if current_user.role == "regular" %>
+            <p>You currently don't own a pet</p>
+          <% else %>
+            <p>You are currently a pet owner</p>
+          <% end %>
+          <% if current_user.bio.nil? %>
+            <p>Add your bio by clicking the "Edit Account" button below </p>
+          <% else %>
+          <p>Bio <span><%= current_user&.bio %></span></p>
+          <% end %>
+
+        <%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary" %>
+
+        <%= link_to "Cancel Account", user_registration_path, method: :delete, data: { confirm: "Not happy? Are you sure?" }, class: "btn btn-outline-primary mx-1" %>
+
+      </article>
+    </div>
+    
+  </main>
+</section>

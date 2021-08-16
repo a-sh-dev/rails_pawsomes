@@ -25,9 +25,9 @@ class User < ApplicationRecord
     regular: 2,
   }
 
-  # User model methods
-  def get_location
-    "#{self.location.city}, #{self.location.country}"
+  
+  def display_location
+    "#{self.location.city}, #{self.location.country}".titlecase
   end
 
   private
