@@ -14,7 +14,7 @@ class PagesController < ApplicationController
   def account
   end
   
-  def pawlour
+  def my_pets
   end
 
 end
