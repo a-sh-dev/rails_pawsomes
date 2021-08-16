@@ -2,6 +2,7 @@ class PetsController < ApplicationController
   before_action :set_pet, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_form_vars, only: [:new, :edit, :create]
+  # after_action :check_existing_breed
 
   # GET /pets or /pets.json
   def index
@@ -74,6 +75,16 @@ class PetsController < ApplicationController
       @categories = Category.all
       @gender = Pet.genders.keys
     end
+
+    # Preventing duplicates on Breed build - not yet working
+    # def check_existing_breed
+    #   if Breed.find_by_name(params[:name])
+    #     @breed = Breed.find_by_name(params[:name])
+    #   else
+    #     @breed = Breed.create(category_id: params[:category_id], name: params[:name])
+    #   end
+    # end
+    
     
 
 end

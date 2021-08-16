@@ -3,7 +3,7 @@ class Pet < ApplicationRecord
   belongs_to :owner, foreign_key: "owner_id", class_name: "User"
   belongs_to :breed
   accepts_nested_attributes_for :breed
-
+  has_one :category, through: :breed
 
   # Validations
   validates :name, presence: true, format: { with: /\A[a-zA-Z][a-zA-Z ]+\z/, message: "only alphabets and spaces are allowed" } 
@@ -36,16 +36,16 @@ class Pet < ApplicationRecord
       self.name.downcase!
     end
 
-    # Use existing breed record if exists, else, save new record
-    def check_existing_breed
-      if new_breed = Breed.find_by(name: breed.name)
-        self.breed = new_breed
-      else
-        self.breed.save!
-      end
+    #! TO FIX: Use existing breed record if exists, else, save new record
+    # def check_existing_breed
+    #   if new_breed = Breed.find_by(name: breed.name)
+    #     self.breed = new_breed
+    #   else
+    #     self.breed.save!
+    #   end
       
       # self.breed << Breed.find_or_create_by(name: self.breed_name, category_id: self.breed.category_id)
-    end
+    # end
   
 
 end
