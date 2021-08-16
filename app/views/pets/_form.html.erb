@@ -10,7 +10,9 @@
       </div>    
   
       <!-- Nested Breed & Category Attributes -->
-      <%= f.simple_fields_for :breed, Breed.new do |breed| %>
+      <%= f.simple_fields_for :breed do |breed| %>
+        <%= breed.error_notification %>
+        <%= breed.error_notification message: breed.object.errors[:base].to_sentence if breed.object.errors[:base].present? %>
         <div class="form-row">
 
           <div class="form-group col-md-4">
@@ -28,7 +30,7 @@
       </div>
 
       <div class="form-check form-check-inline mb-3">
-        <%= f.input :gender, as: :radio_buttons, collection: [["Male", "male"], ["Female", "female"], ["Unknown", "unknown"]], class: "form-check-input" %>
+        <%= f.input :gender, as: :radio_buttons, collection: [["Male", "male"], ["Female", "female"], ["Unknown", "unknown"]], class: "form-check-input", wrapper_html: { class: "form-check-inline" } %>
       </div> 
   
       <%= f.input :bio, as: :text, label: "Short bio of your pet", hint: "100 characters limit", required: false %>
