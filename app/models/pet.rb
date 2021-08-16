@@ -5,6 +5,8 @@ class Pet < ApplicationRecord
   accepts_nested_attributes_for :breed
   has_one :category, through: :breed
 
+  delegate :category, to: :breed
+
   # Validations
   validates :name, presence: true, format: { with: /\A[a-zA-Z][a-zA-Z ]+\z/, message: "only alphabets and spaces are allowed" } 
   

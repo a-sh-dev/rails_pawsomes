@@ -10,7 +10,7 @@
       </div>    
   
       <!-- Nested Breed & Category Attributes -->
-      <%= f.simple_fields_for :breed do |breed| %>
+      <%= f.simple_fields_for :breed, @pet.breed do |breed| %>
         <%= breed.error_notification %>
         <%= breed.error_notification message: breed.object.errors[:base].to_sentence if breed.object.errors[:base].present? %>
         <div class="form-row">
