@@ -42,6 +42,25 @@ class Pet < ApplicationRecord
       "#{age} years old"
     end
   end
+
+  def display_category_breed
+    if self.category.name == "Others" && self.breed.name == "unknown"
+      return "Pet Profile"
+    elsif
+      self.breed.name == "unknown"
+        return "#{self.category.name}".titlecase
+    else
+      "#{self.category.name} – #{self.breed.name}".titlecase
+    end
+  end
+  
+  def display_owner_location
+    "#{self.owner.location.city}, #{self.owner.location.country}".titlecase
+  end
+  
+  def display_dob
+    "#{self.dob.strftime("%e %b %Y")}" 
+  end
   
 
   private
