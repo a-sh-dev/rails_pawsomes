@@ -17,6 +17,8 @@ class Pet < ApplicationRecord
 
   validates :gender, :dob, presence: true
 
+  # validates_attachment :profile_photo, presence: true, content_type: { content_type: "image/png, image/jpeg, image/jpg" }
+
   # Callout methods
   before_save :remove_whitespace
   before_save :lowercase_name
@@ -26,6 +28,21 @@ class Pet < ApplicationRecord
   enum gender: {
     male: 0, female: 1, unknown: 2,
   }
+
+
+  def display_age
+    age = Date.today.year - self.dob.year
+    age -= 1 if Date.today < self.dob + age.years
+    
+    if age < 1
+      "Less than a year old"
+    elsif age == 1
+      "#{age} year old"
+    else
+      "#{age} years old"
+    end
+  end
+  
 
   private
 

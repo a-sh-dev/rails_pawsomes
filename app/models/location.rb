@@ -28,20 +28,5 @@ class Location < ApplicationRecord
       end
     end
   
-    # ! Not working yet, ideally to check existing record, if new, save
-    # def use_existing_country
-    #   if self.country.exists?
-    #     return self.country
-    #   else
-    #     curent_user.params([:location][:country])
-    #   end
-    # end
 
-    # def use_existing_city
-    #   if self.city.exists?
-    #     return self.city
-    #   else
-    #     curent_user.params([:location][:city])
-    #   end
-    # end 
 end
