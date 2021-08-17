@@ -1,4 +1,4 @@
-<div class="col-11 col-md-8 card bg-light border-primary p-3 p-md-5">
+<section class="col-11 col-md-8 card bg-light border-primary p-3 p-md-5">
   <%= simple_form_for(@pet) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -45,12 +45,11 @@
         <%= f.input :profile_photo, as: :file, label: "Your pet's best profile photo", required: false, accept: "image/jpeg, image/png, image/jpg", class: "form-control-file" %>
       </div>
 
+      <div class="form-actions">
+        <%= f.button :submit, "Add Pet", class: "btn btn-primary" %>
+      </div> 
 
     </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Add Pet", class: "btn btn-primary" %>
-    </div>  
-
+    
   <% end %>
-</div> 
+</section> 
