@@ -6,7 +6,8 @@ class PetsController < ApplicationController
 
   # GET /pets or /pets.json
   def index
-    @pets = Pet.all
+    @pets = Pet.all.includes(:category)
+    # @pets = Pet.all
   end
 
   # GET /pets/1 or /pets/1.json
@@ -79,17 +80,6 @@ class PetsController < ApplicationController
     def set_form_vars
       @categories = Category.all
       @gender = Pet.genders.keys
-    end
-
-    # Preventing duplicates on Breed build - not yet working
-    # def check_existing_breed
-    #   if Breed.find_by_name(params[:name])
-    #     @breed = Breed.find_by_name(params[:name])
-    #   else
-    #     @breed = Breed.create(category_id: params[:category_id], name: params[:name])
-    #   end
-    # end
+    end    
     
-    
-
 end
