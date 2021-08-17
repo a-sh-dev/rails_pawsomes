@@ -13,7 +13,7 @@ class Pet < ApplicationRecord
   
   validates :instagram, length: { in: 3..30 }, format: { with: /\A[a-zA-Z0-9_.]+\z/, message: "no spaces or symbols except periods and underscores are allowed" }, allow_blank: true 
 
-  validates :bio, length: { maximum: 100, too_long: "Only %{count} max characters allowed" }, allow_blank: true
+  validates :bio, length: { maximum: 250, too_long: "Only %{count} max characters allowed" }, allow_blank: true
 
   validates :gender, :dob, presence: true
 
