@@ -56,3 +56,4 @@ gem 'devise'
 gem 'simple_form'
 gem 'country_state_select'
 gem 'cancancan'
+gem "aws-sdk-s3", "~> 1.99"
