@@ -26,9 +26,11 @@ class PetsController < ApplicationController
   # POST /pets or /pets.json
   def create
     # Preventing duplicates when breed name mathes exsiting record
-    @breed = Breed.find_by_name(params[:pet][:breed_attributes][:name]) || Breed.create(name: params[:pet][:breed_attributes][:name])
+    breed = Breed.find_by_name(params[:pet][:breed_attributes][:name]) || Breed.create(name: params[:pet][:breed_attributes][:name], category_id: params[:pet][:breed_attributes][:category_id])
 
     @pet = current_user.pets.new(pet_params.except(params[:pet][:breed_attributes][:name]))
+
+    @pet.breed = breed
 
     respond_to do |format|
       if @pet.save
