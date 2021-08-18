@@ -2,12 +2,11 @@ class PetsController < ApplicationController
   before_action :set_pet, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_form_vars, only: [:new, :edit, :create]
-  # after_action :check_existing_breed
 
   # GET /pets or /pets.json
   def index
-    @pets = Pet.all.includes(:category)
-    # @pets = Pet.all
+    # @pets = Pet.all.includes(:category)
+    @pets = Pet.all
   end
 
   # GET /pets/1 or /pets/1.json

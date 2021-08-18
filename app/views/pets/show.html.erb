@@ -18,7 +18,19 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos fugiat 
     </p>
     
-    <%= link_to "Support #{(@pet.name).titlecase}", pets_path, class: "btn btn-primary my-3 mb-5" %>
+    <% if user_is_pet_owner(@pet) %>
+      <%= link_to "Edit", edit_pet_path(@pet.name), class: "btn btn-primary my-3 mb-5" %>
+      <%= link_to "Remove", pet_path, method: :delete, class: "btn btn-outline-info my-3 mb-5" %>
+    <% else %>
+      <% if current_user_is_supporting(current_user.id, @pet.id) %>
+        <%= link_to "Supporting", unsupport_pet_path, remote: true, class: "btn btn-outline-primary unsupport-btn", id: "unsupport-btn", method: :post %>
+      <% else %>
+        <%= link_to "Support", support_pet_path, remote: true, class: "btn btn-primary support-btn", id: "unsupport-btn", method: :post %>
+      <% end %>
+      <!-->
+      <%= link_to "Supporting #{(@pet.name).titlecase}", pets_path, class: "btn btn-primary my-3 mb-5" %>
+      <-->
+    <% end %>
 
     <%= link_to "Back to Paw Pets", pets_path, class: "btn btn-outline-primary my-3 mb-5" %>
   </main>
