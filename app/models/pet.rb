@@ -6,6 +6,11 @@ class Pet < ApplicationRecord
   has_one :category, through: :breed
   has_one_attached :profile_photo
 
+  # Pet has many supporter Users (other than the owner) through Support
+  has_many :supports, foreign_key: :supported_pet_id
+  has_many :supporters, through: :supports
+
+  # Directly links Pet to Category -> Pet.last.category (instead of Pet.last.breed.category)
   delegate :category, to: :breed
 
   # Validations
