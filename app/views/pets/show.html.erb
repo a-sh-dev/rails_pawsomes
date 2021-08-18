@@ -6,7 +6,7 @@
   <main>
     <div class="row">
       <picture class="w-50 ml-0">
-        <%= image_tag @pet.profile_photo, class: "img-thumbnail rounded profile-photo" if @pet.profile_photo.attached? %>
+        <%= image_tag profile_photo_select(@pet), class: "img-thumbnail rounded profile-photo" %>
       </picture>
     </div>
     

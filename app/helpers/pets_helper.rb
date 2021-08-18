@@ -1,13 +1,13 @@
 module PetsHelper
 
-  def display_pet_age 
-    ((Time.now - self.dob.to_time) / 1.year.seconds).floor
-  end 
-
-  def age
-    today = Date.today
-    d = Date.new(today.year, dob.month, dob.day)
-    age = d.year - dob.year - (d > today ? 1 : 0)
+  def profile_photo_select(pet)
+    # user uploaded photo for pet profile
+    return pet.profile_photo if pet.profile_photo.attached?
+    # otherwise use default image
+    return "pet_profile_def_green_1000"
   end
+  
+
+
 
 end
