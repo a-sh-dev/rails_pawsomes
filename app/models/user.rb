@@ -30,7 +30,16 @@ class User < ApplicationRecord
     regular: 2,
   }
 
+  # Relations for Support: supporter_user
+  def support(pet_id)
+    Support.create(supported_pet: pet_id)
+  end
   
+  def unsupport(pet_id)
+    Support.find_by(supported_pet: pet_id).destroy
+  end
+  
+
   def display_location
     "#{self.location.city}, #{self.location.country}".titlecase
   end

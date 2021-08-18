@@ -36,7 +36,6 @@
   flex: 1;
 }
 
-
 .navbar-bg {
   background-color: $info;
 }
@@ -66,4 +65,13 @@
   font-family: $font-family-base;
   font-size: 2rem;
   color: $secondary;
+}
+
+.support-btn {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.unsupport-btn {
+  text-transform: uppercase;
 }
