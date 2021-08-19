@@ -69,6 +69,10 @@ class Pet < ApplicationRecord
   def display_owner_location
     "#{self.owner.location.city}, #{self.owner.location.country}".titlecase
   end
+
+  def display_owner_country
+    "#{self.owner.location.country}".titlecase
+  end
   
   def display_dob
     "#{self.dob.strftime("%e %b %Y")}" 
