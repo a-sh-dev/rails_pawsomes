@@ -395,5 +395,86 @@ if Pet.count == 0
       }
     ]
   )
-  puts "--------> Created #{Pet.count} Pets"
+  puts "--------> Created #{Pet.count} Pets"  
+end
+
+# Support Relations
+if Support.count == 0
+  supports = Support.create(
+    [
+      {
+        supporter_id: User.find_by_username("minipouce").id,
+        supported_pet_id: Pet.find_by_name("nyomi").id
+      },
+      {
+        supporter_id: User.find_by_username("minipouce").id,
+        supported_pet_id: Pet.find_by_name("norm").id
+      },
+      {
+        supporter_id: User.find_by_username("minipouce").id,
+        supported_pet_id: Pet.find_by_name("mae").id
+      },
+      {
+        supporter_id: User.find_by_username("minipouce").id,
+        supported_pet_id: Pet.find_by_name("goguma").id
+      },
+      {
+        supporter_id: User.find_by_username("minipouce").id,
+        supported_pet_id: Pet.find_by_name("celamet").id
+      },
+      {
+        supporter_id: User.find_by_username("minipouce").id,
+        supported_pet_id: Pet.find_by_name("cosette").id
+      },
+      {
+        supporter_id: User.find_by_username("minipouce").id,
+        supported_pet_id: Pet.find_by_name("charis").id
+      },
+      {
+        supporter_id: User.find_by_username("minipouce").id,
+        supported_pet_id: Pet.find_by_name("mboi").id
+      },
+      {
+        supporter_id: User.find_by_username("kim_jung").id,
+        supported_pet_id: Pet.find_by_name("moxie").id
+      },
+      {
+        supporter_id: User.find_by_username("kim_jung").id,
+        supported_pet_id: Pet.find_by_name("bertram").id
+      },
+      {
+        supporter_id: User.find_by_username("kim_jung").id,
+        supported_pet_id: Pet.find_by_name("oakkie").id
+      },
+      {
+        supporter_id: User.find_by_username("kim_jung").id,
+        supported_pet_id: Pet.find_by_name("nyomi").id
+      },
+      {
+        supporter_id: User.find_by_username("coder_pets").id,
+        supported_pet_id: Pet.find_by_name("nyomi").id
+      },
+      {
+        supporter_id: User.find_by_username("coder_pets").id,
+        supported_pet_id: Pet.find_by_name("goguma").id
+      },
+      {
+        supporter_id: User.find_by_username("coder_pets").id,
+        supported_pet_id: Pet.find_by_name("moxie").id
+      },
+      {
+        supporter_id: User.find_by_username("coder_pets").id,
+        supported_pet_id: Pet.find_by_name("mboi").id
+      },
+      {
+        supporter_id: User.find_by_username("coder_pets").id,
+        supported_pet_id: Pet.find_by_name("mae").id
+      },
+      {
+        supporter_id: User.find_by_username("coder_pets").id,
+        supported_pet_id: Pet.find_by_name("harlow").id
+      },
+    ]
+  )
+  puts "--------> Created #{Support.count} Supports"  
 end
