@@ -1,7 +1,7 @@
 <section class="container my-5">
   <header class="mb-5">
-    <h1 class="display-4">Paw Pets</h1>
-    <h2 class="subtitle">All the pawesomes pets</h2>
+    <h1 class="display-4">Pawlour</h1>
+    <h2 class="subtitle">The parlour where all the paw-pets gather</h2>
   </header>
   <main>
     <p class="lead">
@@ -11,8 +11,6 @@
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos fugiat 
     </p>
-    
-    <%= link_to "Become Pawesomes!", new_user_registration_path, class: "btn btn-primary my-3 mb-5" %>
 
     <table>
       <thead>
@@ -46,11 +44,13 @@
       </tbody>
     </table>
 
-    <br>
-
-    <%= link_to 'New Pet', new_pet_path %>
 
   </main>
 </section>
-
+<!-- If current user a pet owner, enable New Pet -->
+<% if current_user.owner? %>
+  <section>
+    <%= render 'add_pet' %>
+  </section>
+<% end %>
 
