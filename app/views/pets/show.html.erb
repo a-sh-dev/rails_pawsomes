@@ -23,9 +23,9 @@
       <%= link_to "Remove Pet", pet_path, method: :delete, class: "btn btn-outline-primary my-3 mb-5" %>
     <% else %>
       <% if current_user_is_supporting(current_user.id, @pet.id) %>
-        <%= link_to "Supporting", unsupport_pet_path, remote: true, class: "btn btn-outline-primary unsupport-btn", id: "unsupport-btn", method: :post %>
+        <%= link_to "Supporting", unsupport_pet_path, method: :post, params: {id: @pet.id}, remote: true, class: "btn btn-outline-primary unsupport-btn", id: "unsupport-btn" %>
       <% else %>
-        <%= link_to "Support", support_pet_path, remote: true, class: "btn btn-primary support-btn", id: "unsupport-btn", method: :post, params: {id: @pet.id} %>
+        <%= link_to "Support", support_pet_path, remote: true, method: :post, params: {id: @pet.id}, class: "btn btn-primary support-btn", id: "support-btn" %>
       <% end %>
     <% end %>
 

@@ -21,5 +21,13 @@ class SupportsController < ApplicationController
     end
   end
 
+  def create
+    pet_to_support = Pet.find(params[:id]).id
+    supporter = current_user.id
+    support = Support.create(supported_pet_id: pet_to_support, supporter_id: supporter)
+  end
+  
+
+
 end
 

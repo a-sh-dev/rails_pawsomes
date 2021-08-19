@@ -29,15 +29,6 @@ class User < ApplicationRecord
     owner: 1,
     regular: 2,
   }
-
-  #! TO-FIX with controllers Relations for Support: supporter_user
-  # def support(pet_id)
-  #   Support.create(supported_pet: pet_id)
-  # end
-  
-  # def unsupport(pet_id)
-  #   Support.find_by(supported_pet: pet_id).destroy
-  # end
   
 
   def display_location

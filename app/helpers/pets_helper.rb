@@ -18,5 +18,11 @@ module PetsHelper
     return true if support
   end
   
+  # display icon for pet's gender
+  def display_gender
+    if self.male?
+      return 
+    end
+  end
 
 end
