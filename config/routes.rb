@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   resources :pets
   devise_for :users, controllers: { registrations: "users/registrations" }
   
-  post ":pet_id/support_pet", to: "supports#support_pet", as: :support_pet
-  post ":pet_id/unsupport_pet", to: "supports#unsupport_pet", as: :unsupport_pet
+  post "/support_pet", to: "supports#support_pet", as: :support_pet
+  post "/unsupport_pet", to: "supports#unsupport_pet", as: :unsupport_pet
   
   root to: "pages#home"
   

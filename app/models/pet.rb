@@ -33,6 +33,15 @@ class Pet < ApplicationRecord
     male: 0, female: 1, unknown: 2,
   }
 
+  # Supports Methods to work with the controller
+  def support(pet_id)
+    Support.create(supported_pet_id: pet_id)
+  end
+  
+  def unsupport(pet_id)
+    Support.find_by(supported_pet_id: pet_id).destroy
+  end
+
 
   def display_age
     age = Date.today.year - self.dob.year
