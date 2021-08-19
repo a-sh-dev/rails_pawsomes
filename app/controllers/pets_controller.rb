@@ -11,6 +11,10 @@ class PetsController < ApplicationController
 
   # GET /pets/1 or /pets/1.json
   def show
+    # all pets owned by the related pet
+    owner_pets = @pet.owner.pets if @pet.owner.pets > 1
+    # all pets except the related pet
+    @siblings = owner_pets.where.not(id: @pet.id) 
   end
 
   # GET /pets/new
