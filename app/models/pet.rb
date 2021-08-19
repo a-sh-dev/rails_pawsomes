@@ -42,7 +42,6 @@ class Pet < ApplicationRecord
     Support.find_by(supported_pet_id: pet_id).destroy
   end
 
-
   def display_age
     age = Date.today.year - self.dob.year
     age -= 1 if Date.today < self.dob + age.years
@@ -74,8 +73,7 @@ class Pet < ApplicationRecord
   def display_dob
     "#{self.dob.strftime("%e %b %Y")}" 
   end
-  
-
+      
   private
 
     def remove_whitespace

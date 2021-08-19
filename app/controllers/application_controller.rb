@@ -25,5 +25,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # redirect users back to account page after account update
+  def after_update_path_for(resource)
+    account_path
+  end
+  
+
 
 end

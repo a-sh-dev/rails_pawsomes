@@ -7,40 +7,60 @@
     <div class="row">
       <article class="col">
         <h4>Account Details</h4>
-          <ul class= "list-group list-group-flush">
-            <li class="list-group-item bg-transparent pl-0">
-              <small class="mini-top-title mb-0">Username</small>
-              <p class="lead"><%= current_user&.username %></p>
-            </li>
-            <li class="list-group-item bg-transparent pl-0">
-              <small class="mini-top-title mb-0">E-mail</small>
-              <p class="lead"><%= current_user&.email %></p>
-            </li>
-            <li class="list-group-item bg-transparent pl-0">
-              <small class="mini-top-title mb-0">Location</small>
-              <p class="lead"><%= current_user&.display_location %></p>
-            </li>
-          </ul>
+        <ul class= "list-group list-group-flush">
+          <li class="list-group-item bg-transparent pl-0">
+            <small class="mini-top-title mb-0">Username</small>
+            <p class="lead"><%= current_user&.username %></p>
+          </li>
+          <li class="list-group-item bg-transparent pl-0">
+            <small class="mini-top-title mb-0">E-mail</small>
+            <p class="lead"><%= current_user&.email %></p>
+          </li>
+          <li class="list-group-item bg-transparent pl-0">
+            <small class="mini-top-title mb-0">Location</small>
+            <p class="lead"><%= current_user&.display_location %></p>
+          </li>
+        </ul>
 
-        <h4 class="mt-5">Profile</h4>
+        <h4 class="mt-4">Profile</h4>
+        <ul class= "list-group list-group-flush">
+          <li class="list-group-item bg-transparent pl-0">
+            <small class="mini-top-title mb-0">Pet owner status</small>
+            <% if current_user&.regular? %>
+              <p class="lead">Not yet, maybe one day</p>
+            <% else %>
+              <p class="lead">Indeed, you're a pet paw-rent!</p>
+            <% end %>              
+          </li>
+          <li class="list-group-item bg-transparent pl-0">
+            <small class="mini-top-title mb-0">Bio</small>
+            <% if current_user.bio.nil? %>
+              <p class="text-muted font-italic">Add your bio by clicking the "Edit" button below </p>
+            <% else %>
+              <% if current_user&.owner? %>
+                <p class="text-muted font-italic">Your short bio is displayed publicly on your individual pet's profile page</p>
+              <% end %>
+            <p class="lead"><%= current_user&.bio %></p>
+            <% end %>
+          </li>
+        </ul>
+
+        <!-- Display PayPal.me only for owners -->
+        <% if current_user&.owner? %>
+          <h4 class="mt-4">Pet Funding</h4>
+          <p>At the moment we only use PayPal.me to integrate funding capability. Follow the instructions <%= link_to "here", "https://www.paypal.com/paypalme/", target: "_blank" %> to get one.</p>
           <ul class= "list-group list-group-flush">
             <li class="list-group-item bg-transparent pl-0">
-              <small class="mini-top-title mb-0">Pet owner status</small>
-              <% if current_user.role == "regular" %>
-                <p class="lead">You currently don't own a pet (yet!)</p>
-              <% else %>
-                <p class="lead">You are currently a pet owner</p>
-              <% end %>              
-            </li>
-            <li class="list-group-item bg-transparent pl-0">
-              <small class="mini-top-title mb-0">Bio</small>
-              <% if current_user.bio.nil? %>
-                <p class="text-muted font-italic">Add your bio by clicking the "Edit" button below </p>
-              <% else %>
-              <p class="lead"><%= current_user&.bio %></p>
-              <% end %>
+            <% if current_user&.paypal_me.nil? %>
+              <p class="text-muted font-italic">Once you've obtained your PayPal.me link please edit your account below to add </p>
+            <% else %>
+              <small class="mini-top-title mb-0">PayPal.me/</small>
+              <p class="lead"><%= current_user&.paypal_me %></p>
+            <% end %>              
+              
             </li>
           </ul>
+        <% end %>
       </article>
     </div>
   </main>
