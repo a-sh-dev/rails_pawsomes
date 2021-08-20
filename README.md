@@ -1,8 +1,6 @@
 # *Pawsomes* – Rails Marketplace
 
-***Also known as Angie SH***
-
-[toc]
+***Also known as Angie SH*** 
 
 # URLs 
 
@@ -309,7 +307,7 @@ Other than fixing the known issues, possible future improvements:
 
 # Tasks Allocation – Project Management
 
-Pawesomes project tasks are broken down and implemented with Trello board. Subtasks in each card are defined as checklists to help oversee and overview the scope of work. The projects are also broken into two main types: MVP and SPRINKLERS (or 'good to have, but not really necessary'). Honestly, it was quite hard to break down the tasks as I wasn't sure about the difficulty of the major tasks. Overally, it significantly help to oversee the project for better managements as well as giving a sense of acomplishments when you drag the tasks to the DONE sections.
+Pawesomes project tasks are broken down and implemented with Trello board. Subtasks in each card are defined as checklists to help oversee and overview the scope of work. The projects are also broken into two main types: MVP and SPRINKLERS (or 'good to have, but not really necessary'). Honestly, it was quite hard to break down the tasks as I wasn't sure about the difficulty of the major tasks. Overall, Trello has significantly helped to plan and overview the project for better managements as well as giving a sense of acomplishments when you drag the tasks to the DONE sections.
 
 ## Screenshots
 
@@ -319,7 +317,9 @@ Pawesomes project tasks are broken down and implemented with Trello board. Subta
 
 ## Trello Board link:
 
-`https://trello.com/b/nZXThdTt`
+```
+https://trello.com/b/nZXThdTt
+```
 
 # Personal Reflection 
 
