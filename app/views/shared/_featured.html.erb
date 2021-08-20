@@ -1,25 +1,10 @@
 <section class="container my-5">
-  <header class="row">
+  <header class="row mb-5">
     <h2>Featured Pets</h2>
   </header>
   
-  <main class="card-deck">
-    <% @featured_pets.each do |pet| %>
-      <%= render partial: "card_pet", locals: { pet: pet } %>
-
-      <%# TO REMOVE TO CARD %>
-      <article class="card border-primary">
-        <%= image_tag profile_photo_select(pet), class:"card-img-top rounded-top" alt:"#{name}" %>
-        <div class="card-body bg-light">
-          <h6 class="card-title"><%= pet.name %></h6>
-          <p class="card-text"><i class="fas fa-map-marker-alt"></i><%= pet.display_owner_country %></p>
-        </div>
-      </article>      
-
-
-
-    <% end %>
-
-  </article>
+  <main class="row row-cols-2 row-cols-md-4">
+    <%= render "shared/card_pet", pets: @featured_pets %>
+  </main>
   
 </section>

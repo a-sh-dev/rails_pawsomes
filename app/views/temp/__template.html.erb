@@ -34,3 +34,23 @@
   <footer class="mt-5">
   </footer>
 </section>
+
+<!-- For cards Decks -->
+
+<main class="card-deck">
+  <%= render "shared/card_pet", pets: @featured_pets %>
+
+    <%# CARD %>
+    <% pets.each do |pet| %>
+      <article class="card border-primary">
+        <%= image_tag profile_photo_select(pet), class:"card-img-top rounded-top" alt:"#{name}" %>
+        <div class="card-body bg-light">
+          <h6 class="card-title"><%= pet.name %></h6>
+          <p class="card-text"><i class="fas fa-map-marker-alt"></i><%= pet.display_owner_country %></p>
+        </div>
+      </article>
+    <% end %>      
+
+  <% end %>
+
+  </main>

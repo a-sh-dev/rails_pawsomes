@@ -1,0 +1,13 @@
+<% pets.each do |pet| %>
+  <%= link_to pet_path(pet) do %>
+    <article class="col mb-4 text-decoration-none">
+      <div class="card border-primary h-100">
+        <%= image_tag profile_photo_select(pet), class:"card-img-top rounded-top border-bottom border-primary", alt:"#{pet.img_alt_text}" %>
+        <div class="card-body bg-light">
+          <h5 class="card-title mb-1"><%= pet.name.titlecase %></h5>
+          <p class="card-text"><i class="fas fa-map-marker-alt mr-2 text-info"></i><%= pet.display_owner_country %></p>
+        </div>
+      </div> 
+    </article>
+  <% end %>
+<% end %>    
