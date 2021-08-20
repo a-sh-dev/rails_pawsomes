@@ -24,7 +24,7 @@ if User.count == 0
         username: "pawlice",
         email: "admin@test.com",
         password: "123456",
-        password_confirmation: "paw123456",
+        password_confirmation: "123456",
         role: 0,
         pet_owner: true,
         paypal_me: "SunnySkysAnimalRescu",
