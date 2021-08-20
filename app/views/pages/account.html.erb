@@ -46,13 +46,13 @@
         </ul>
 
         <!-- Display PayPal.me only for owners -->
-        <% if current_user&.owner? %>
+        <% if current_user&.admin? || current_user&.owner? %>
           <h4 class="mt-4">Pet Funding</h4>
-          <p>At the moment we only use PayPal.me to integrate funding capability. Follow the instructions <%= link_to "here", "https://www.paypal.com/paypalme/", target: "_blank" %> to get one.</p>
+          <p>At the moment we only use PayPal.me to integrate funding capability.</p>
           <ul class= "list-group list-group-flush">
             <li class="list-group-item bg-transparent pl-0">
-            <% if current_user&.paypal_me.nil? %>
-              <p class="text-muted font-italic">Once you've obtained your PayPal.me link please edit your account below to add </p>
+            <% unless current_user&.paypal_me.nil? %>
+              <p class="text-muted font-italic">Follow the instructions <%= link_to "here", "https://www.paypal.com/paypalme/", target: "_blank" %> to register a PayPal.me link. Once you've obtained it, please edit your account below to add to your pet funding. </p>
             <% else %>
               <small class="mini-top-title mb-0">PayPal.me/</small>
               <p class="lead"><%= current_user&.paypal_me %></p>

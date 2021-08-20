@@ -11,7 +11,7 @@
 
 </section>
 <!-- If current user a pet owner, enable add New Pet -->
-<% if current_user.owner? %>
+<% if user_signed_in? && (current_user&.admin? || current_user.owner?) %>
   <section>
     <%= render 'shared/new_pet' %>
   </section>

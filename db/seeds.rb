@@ -22,8 +22,8 @@ if User.count == 0
     [
       {
         username: "pawlice",
-        email: "admin@admin-test.com",
-        password: "paw123456",
+        email: "admin@test.com",
+        password: "123456",
         password_confirmation: "paw123456",
         role: 0,
         pet_owner: true,
