@@ -6,7 +6,7 @@ class PetsController < ApplicationController
   # GET /pets or /pets.json
   def index
     # @pets = Pet.all.includes(:category)
-    @pets = Pet.all
+    @pets = Pet.all.order("created_at DESC")
   end
 
   # GET /pets/1 or /pets/1.json

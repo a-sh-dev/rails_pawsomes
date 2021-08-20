@@ -47,7 +47,7 @@ class Pet < ApplicationRecord
     age -= 1 if Date.today < self.dob + age.years
     
     if age < 1
-      "Less than a year old"
+      "Less than a year"
     elsif age == 1
       "#{age} year old"
     else
@@ -55,14 +55,11 @@ class Pet < ApplicationRecord
     end
   end
 
-  def display_category_breed
-    if self.category.name == "Others" && self.breed.name == "unknown"
-      return "Pet Profile"
-    elsif
-      self.breed.name == "unknown"
-        return "#{self.category.name}".titlecase
+  def display_breed
+    if self.breed.name == "unknown"
+      return "Not Known"
     else
-      "#{self.category.name} – #{self.breed.name}".titlecase
+      "#{self.breed.name}".titlecase
     end
   end
   

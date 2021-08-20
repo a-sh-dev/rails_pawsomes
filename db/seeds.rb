@@ -27,7 +27,7 @@ if User.count == 0
         password_confirmation: "paw123456",
         role: 0,
         pet_owner: true,
-        paypal_me: "paypalmelinkfortestonly",
+        paypal_me: "SunnySkysAnimalRescu",
         bio: "I regularly pawtrol the Pawsomes community",
         location_id: Location.find_by(country: "australia").id
       },
@@ -38,7 +38,7 @@ if User.count == 0
         password_confirmation: "123456",
         role: 1,
         pet_owner: true,
-        paypal_me: "paypalmelinkfortestonly",
+        paypal_me: "SunnySkysAnimalRescu",
         bio: "All the nine cats are rescued from the streets. My mother and I continously foster rescued cats until they find their forever home. Your donations are greatly appreciated!",
         location_id: Location.find_by(country: "south korea").id
       },
@@ -49,7 +49,7 @@ if User.count == 0
         password_confirmation: "123456",
         role: 1,
         pet_owner: true,
-        paypal_me: "paypalmelinkfortestonly",
+        paypal_me: "SunnySkysAnimalRescu",
         bio: "Family of 6 indoor cats. From the oldest: Celamet, Boi, Embin, Gembulita, Cenil, and Bule",
         location_id: Location.find_by(country: "indonesia").id
       },
@@ -60,7 +60,7 @@ if User.count == 0
         password_confirmation: "123456",
         role: 1,
         pet_owner: true,
-        paypal_me: "paypalmelinkfortestonly",
+        paypal_me: "SunnySkysAnimalRescu",
         bio: "These are the pets owned by Melbourne's FX1 2021 cohorts",
         location_id: Location.find_by(country: "australia").id
       },
@@ -71,7 +71,7 @@ if User.count == 0
         password_confirmation: "123456",
         role: 1,
         pet_owner: true,
-        paypal_me: "paypalmelinkfortestonly",
+        paypal_me: "SunnySkysAnimalRescu",
         bio: "Come and hangout together with your pets at Boris and Horton!",
         location_id: Location.find_by(country: "america").id
       },
@@ -82,7 +82,7 @@ if User.count == 0
         password_confirmation: "123456",
         role: 1,
         pet_owner: true,
-        paypal_me: "paypalmelinkfortestonly",
+        paypal_me: "SunnySkysAnimalRescu",
         bio: "Follow Harlow, Indiana, Reese, Ezra and Mae",
         location_id: Location.find_by(country: "america").id
       },
@@ -93,7 +93,7 @@ if User.count == 0
         password_confirmation: "123456",
         role: 1,
         pet_owner: true,
-        paypal_me: "paypalmelinkfortestonly",
+        paypal_me: "SunnySkysAnimalRescu",
         bio: "I run The Hole, a contemporary art gallery on Bowery in New York with my best friend Bobo",
         location_id: Location.find_by(country: "america").id
       },
@@ -104,7 +104,7 @@ if User.count == 0
         password_confirmation: "123456",
         role: 1,
         pet_owner: true,
-        paypal_me: "paypalmelinkfortestonly",
+        paypal_me: "SunnySkysAnimalRescu",
         bio: "Photographer. Living life out of the Norm",
         location_id: Location.find_by(country: "america").id
       },
@@ -115,7 +115,7 @@ if User.count == 0
         password_confirmation: "123456",
         role: 1,
         pet_owner: true,
-        paypal_me: "paypalmelinkfortestonly",
+        paypal_me: "SunnySkysAnimalRescu",
         bio: "Owner of Moxie and Numi",
         location_id: Location.find_by(country: "norway").id
       },
