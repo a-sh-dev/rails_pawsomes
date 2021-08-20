@@ -1,15 +1,44 @@
 <section class="container my-5">
   <header class="mb-5">
     <h1 class="display-4">My Pets</h1>
-    <h2 class="subtitle">All pets that you own or support</h2>
+    <h2 class="subtitle">All pets that <%= current_user&.username.titlecase %> own or support</h2>
   </header>
-  <main>
-    <p class="lead">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste non soluta minima dicta animi odio vitae enim ducimus optio aliquid?
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos fugiat sit nostrum culpa. Esse, ipsum? Perferendis maxime quod beatae eos.
-    </p>
+  
+  <!-- ONLY DISPLAY PETS IF ANY -->
+  <% if current_user&.owner? %>
+    <h4 class="my-4 align-middle">
+      <span class="badge badge-pill badge-secondary mr-2"><%=  current_user.pets.count %></span>Pets Owned
+    </h4>
+    <main class="row row-cols-1 row-cols-md-4">
+      <%= render "shared/card_pet", pets: @pets %>
+    </main>
+  <% end %>
 
-  </main>
 </section>
+<!-- ENABLE ADD PET IF PET OWNER -->
+<% if current_user&.admin? || current_user.owner? %>
+  <section class="bg-info text-center py-5 my-5">
+    <div class="container">
+      <%= link_to 'New Pet', new_pet_path, class: "btn btn-primary btn-lg" %>
+    </div>
+  </section>
+<% end %>
+
+<div class="container">
+  <h4 class="my-4 align-middle">
+    <span class="badge badge-pill badge-secondary mr-2"><%=  current_user.supported_pets.count %></span>Supported Paw-Pets
+  </h4>
+  <% if current_user.supported_pets.count == 0 %>
+    <p class="lead">Become a sup-paw-ter by supporting other pets!</p>
+  <% end %>
+  <main class="row row-cols-1 row-cols-md-4">
+    <%= render "shared/card_pet", pets: @supported_pets %>
+  </main>
+</div>
+
+<aside class="bg-secondary text-center py-5 mt-5">
+  <div class="container">
+    <%= link_to "Support More Pets", pets_path, class: "btn btn-lg btn-primary" %>
+  </div>
+</aside>
+

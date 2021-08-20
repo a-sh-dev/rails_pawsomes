@@ -17,8 +17,8 @@ class PagesController < ApplicationController
   end
   
   def my_pets
-    # when the current user is a pet owner, display pets
-    if current_user&.owner?
+    # when the current user is a pet owner (or admin), display pets
+    if current_user.role == "owner" || "admin" 
       @pets = current_user.pets.order("created_at DESC")
     end
     # check if current user has any supported_pets
