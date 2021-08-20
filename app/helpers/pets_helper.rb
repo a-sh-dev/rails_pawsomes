@@ -2,7 +2,7 @@ module PetsHelper
   
   # Check if the current user is the pet owner 
   def user_is_pet_owner(pet)
-    pet.owner_id == current_user&.id 
+    (pet.owner_id == current_user&.id) || current_user&.admin?
   end
   
   # Check for exisiting support
