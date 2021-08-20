@@ -29,3 +29,12 @@ p {
   color: $primary;
   // font-size: 1.15rem;  
 }
+
+a {
+  &:link {
+    text-decoration: none;
+  }
+  &:hover {
+    color: $secondary;
+  }
+}

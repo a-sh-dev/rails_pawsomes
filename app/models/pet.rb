@@ -77,6 +77,11 @@ class Pet < ApplicationRecord
   def display_dob
     "#{self.dob.strftime("%e %b %Y")}" 
   end
+
+  def img_alt_text
+    "#{self.name}, #{self.breed.name}"
+  end
+  
       
   private
 

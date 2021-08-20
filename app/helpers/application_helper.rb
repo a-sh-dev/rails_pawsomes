@@ -11,14 +11,4 @@ module ApplicationHelper
     }
     bootstrap_alert_class[level]
   end
-
-  # Helper for pet card that is available on all pagees
-  def profile_photo_select(pet)
-    # user uploaded photo for pet profile
-    return pet.profile_photo if pet.profile_photo.attached?
-    # otherwise use default image
-    return "pet_profile_def_green_1000"
-  end
-
-
 end
