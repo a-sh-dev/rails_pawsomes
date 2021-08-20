@@ -199,7 +199,7 @@ if Pet.count == 0
         gender: 0,
         bio: "Blue crossed eyed handsome gentle cat who can't get fat",
         instagram: "dididodo_",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "DID_nyomi.jpeg")), filename: "DID_nyomi.jpeg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "DID_nyomi.jpeg")), filename: "DID_nyomi.jpeg")
       },
       {
         owner_id: User.find_by(username: "dididodo").id,
@@ -209,7 +209,7 @@ if Pet.count == 0
         gender: 1,
         bio: "My name means sweet potato and I love to groom my pawrent and fellow cats",
         instagram: "dididodo_",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "DID_goguma_01.jpeg")), filename: "DID_goguma_01.jpeg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "DID_goguma_01.jpeg")), filename: "DID_goguma_01.jpeg")
       },
       {
         owner_id: User.find_by(username: "dididodo").id,
@@ -219,7 +219,7 @@ if Pet.count == 0
         gender: 0,
         bio: "My name means sweet potato and I love to groom my pawrent and fellow cats",
         instagram: "dididodo_",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "DID_kong.jpeg")), filename: "DID_kong.jpeg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "DID_kong.jpeg")), filename: "DID_kong.jpeg")
       },
       {
         owner_id: User.find_by(username: "dididodo").id,
@@ -229,7 +229,7 @@ if Pet.count == 0
         gender: 1,
         bio: "I only meow back when grandma calls my name",
         instagram: "dididodo_",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "DID_pipi.jpeg")), filename: "DID_pipi.jpeg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "DID_pipi.jpeg")), filename: "DID_pipi.jpeg")
       },
       {
         owner_id: User.find_by(username: "jellibins").id,
@@ -239,7 +239,7 @@ if Pet.count == 0
         gender: 1,
         bio: "Twins, Cenil is the big sister – the 'princess' one, while Bule is the 'stuntmeow'. Our daddy is a munchkin cat, and mum is a Persian cat, aren't we cute?",
         instagram: "jellibins",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "JEL_cenil_bule.jpeg")), filename: "JEL_cenil_bule.jpeg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "JEL_cenil_bule.jpeg")), filename: "JEL_cenil_bule.jpeg")
       },
       {
         owner_id: User.find_by(username: "jellibins").id,
@@ -249,7 +249,7 @@ if Pet.count == 0
         gender: 0,
         bio: "I may be short, but my wife is a gorgeous Persian cat and I love my cute kids! I don't like sharing my plastic spoon toy.",
         instagram: "jellibins",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "JEL_mbin.jpg")), filename: "JEL_mbin.jpg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "JEL_mbin.jpg")), filename: "JEL_mbin.jpg")
       },
       {
         owner_id: User.find_by(username: "jellibins").id,
@@ -259,7 +259,7 @@ if Pet.count == 0
         gender: 0,
         bio: "The most introvert cat in the pack. Loves to sleep and favourite time is watching the sunset through the laundry's windows...",
         instagram: "jellibins",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "JEL_celamet_01.jpg")), filename: "JEL_celamet_01.jpg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "JEL_celamet_01.jpg")), filename: "JEL_celamet_01.jpg")
       },
       {
         owner_id: User.find_by(username: "jellibins").id,
@@ -269,7 +269,7 @@ if Pet.count == 0
         gender: 0,
         bio: "I'm the boss in the jellibins family. I watch over how my hoomans handle money, after all, I'm the CEO. I am also the nicest one in the family.",
         instagram: "jellibins",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "JEL_mboi_01.jpg")), filename: "JEL_mboi_01.jpg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "JEL_mboi_01.jpg")), filename: "JEL_mboi_01.jpg")
       },
       {
         owner_id: User.find_by(username: "jellibins").id,
@@ -279,7 +279,7 @@ if Pet.count == 0
         gender: 1,
         bio: "The queen in the pack. Persian mixed with local street orange cat. She hits his husband, Embin a lot!",
         instagram: "jellibins",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "JEL_gembulita.jpg")), filename: "JEL_gembulita.jpg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "JEL_gembulita.jpg")), filename: "JEL_gembulita.jpg")
       },
       {
         owner_id: User.find_by(username: "jellibins").id,
@@ -289,7 +289,7 @@ if Pet.count == 0
         gender: 0,
         bio: "Cousin of the Jellilbins' fam. He onced stayed over and tried to woo Gembulita, yet unsucessful...",
         instagram: "jellibins",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "JEL_willow.jpg")), filename: "JEL_willow.jpg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "JEL_willow.jpg")), filename: "JEL_willow.jpg")
       },
       {
         owner_id: User.find_by(username: "coder_pets").id,
@@ -299,7 +299,7 @@ if Pet.count == 0
         gender: 0,
         bio: "Larik can be the nicest or the meanest cat in the world, but he is MUCH loved regardless. (Pawrent: Iryna)",
         instagram: "",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "COD_larik.jpg")), filename: "COD_larik.jpg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "COD_larik.jpg")), filename: "COD_larik.jpg")
       },
       {
         owner_id: User.find_by(username: "coder_pets").id,
@@ -309,7 +309,7 @@ if Pet.count == 0
         gender: 0,
         bio: "Charis or Chacha wont stop eating when there are plenty of food... He's gentle and loves to cuddle during winter. (Pawrent: Ash)",
         instagram: "",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "COD_chacha_02.png")), filename: "COD_chacha_02.png")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "COD_chacha_02.png")), filename: "COD_chacha_02.png")
       },
       {
         owner_id: User.find_by(username: "coder_pets").id,
@@ -319,7 +319,7 @@ if Pet.count == 0
         gender: 1,
         bio: "I love to snuggle and enjoy my meowmy's warmth in the morning when she works. (Pawrent: Celine)",
         instagram: "",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "COD_cossette_01.jpg")), filename: "COD_cossette_01.jpg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "COD_cossette_01.jpg")), filename: "COD_cossette_01.jpg")
       },
       {
         owner_id: User.find_by(username: "coder_pets").id,
@@ -329,7 +329,7 @@ if Pet.count == 0
         gender: 1,
         bio: "I'm a demanding cat who doesn't like it if my meowmy ignores me while she works at home. (Pawrent: Bella)",
         instagram: "",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "COD_thunder.jpg")), filename: "COD_thunder.jpg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "COD_thunder.jpg")), filename: "COD_thunder.jpg")
       },
       {
         owner_id: User.find_by(username: "coder_pets").id,
@@ -339,7 +339,7 @@ if Pet.count == 0
         gender: 0,
         bio: "I love macademian nuts, I can fill up to 20 in my tiny mouth",
         instagram: "",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "chipmunk_01.jpeg")), filename: "chipmunk_01.jpeg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "chipmunk_01.jpeg")), filename: "chipmunk_01.jpeg")
       },
       {
         owner_id: User.find_by(username: "kathyg").id,
@@ -349,7 +349,7 @@ if Pet.count == 0
         gender: 0,
         bio: "I am the BOBO! I was adopted off Petfinder from a shelter in OK and now live in NYC and work at an art gallery The Hole with my best friend Kathy.",
         instagram: "bertiebertthepom",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "bobo_01.jpg")), filename: "bobo_01.jpg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "bobo_01.jpg")), filename: "bobo_01.jpg")
       },
       {
         owner_id: User.find_by(username: "oaksoosoo").id,
@@ -359,7 +359,7 @@ if Pet.count == 0
         gender: 0,
         bio: "I love it when mum asks me to potty and when she brushes me so I could be this fluffy!",
         instagram: "oaksoosoo",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "oakkie_01.jpg")), filename: "oakkie_01.jpg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "oakkie_01.jpg")), filename: "oakkie_01.jpg")
       },
       {
         owner_id: User.find_by(username: "moxie_pawrents").id,
@@ -369,7 +369,7 @@ if Pet.count == 0
         gender: 1,
         bio: "I was Norway's 2018 cutest pet. I appeared on national TV once",
         instagram: "moxiethetoller",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "/moxie_01.jpg")), filename: "/moxie_01.jpg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "/moxie_01.jpg")), filename: "/moxie_01.jpg")
       },
       {
         owner_id: User.find_by(username: "jeremyv").id,
@@ -379,7 +379,7 @@ if Pet.count == 0
         gender: 0,
         bio: "I'm the selfie doggo. I love to travel with my Jeremy",
         instagram: "jeremyveach",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "norm_01.jpg")), filename: "norm_01.jpg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "norm_01.jpg")), filename: "norm_01.jpg")
       },
       {
         owner_id: User.find_by(username: "harlowandsage").id,
@@ -389,7 +389,7 @@ if Pet.count == 0
         gender: 1,
         bio: "I think, I think, I'm the sweetest-cutest-babiest one!",
         instagram: "harlowandsage",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "HAR_mae_01.jpg")), filename: "HAR_mae_01.jpg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "HAR_mae_01.jpg")), filename: "HAR_mae_01.jpg")
       },
       {
         owner_id: User.find_by(username: "harlowandsage").id,
@@ -399,7 +399,7 @@ if Pet.count == 0
         gender: 1,
         bio: "The extremely sweet Reese Lightning.",
         instagram: "harlowandsage",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "HAR_reese.jpeg")), filename: "HAR_reese.jpeg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "HAR_reese.jpeg")), filename: "HAR_reese.jpeg")
       },
       {
         owner_id: User.find_by(username: "harlowandsage").id,
@@ -409,7 +409,7 @@ if Pet.count == 0
         gender: 1,
         bio: "The original half of the 'Odd Couple' duo with late Sage. The one that loves people the most, and really, Harlow is the mother of the pack, trully adored and loved by the others.",
         instagram: "harlowandsage",
-        profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "HAR_harlow.jpeg")), filename: "HAR_harlow.jpeg")
+        # profile_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "HAR_harlow.jpeg")), filename: "HAR_harlow.jpeg")
       }
     ]
   )
