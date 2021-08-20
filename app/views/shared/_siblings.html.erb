@@ -1,0 +1,10 @@
+<section class="container mt-3">
+  <header class="row mb-4">
+    <h4 class="col"><%= @pet.name.titlecase %>'s Siblings</h4>
+  </header>
+  
+  <main class="row row-cols-2 row-cols-md-4">
+    <%= render "shared/card_siblings", pets: @siblings %>
+  </main>
+  
+</section>

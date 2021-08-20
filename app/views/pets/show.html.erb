@@ -1,83 +1,124 @@
-<section class="container my-5">
+<section class="container mt-5">
   <header class="mb-5">
     <h1 class="display-4"><%= @pet.name.titlecase %></h1>
-    <h2 class="subtitle"><%= @pet.display_category_breed %></h2>
+    <h2 class="subtitle">Paw-Pet Profile</h2>
   </header>
-  <main>
-    <div class="row">
-      <picture class="w-50 ml-0">
-        <%= image_tag profile_photo_select(@pet), class: "img-thumbnail rounded profile-photo" %>
-      </picture>
-    </div>
-    
-    <p class="lead">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos fugiat 
-    </p>
-    
-    <% if user_is_pet_owner(@pet) %>
-      <%= link_to "Edit Pet", edit_pet_path(@pet), class: "btn btn-primary my-3 mb-5" %>
-      <%= link_to "Remove Pet", pet_path, method: :delete, class: "btn btn-outline-primary my-3 mb-5" %>
-    <% else %>
-      <% if current_user_is_supporting(current_user.id, @pet.id) %>
-        <%= link_to "Supporting", unsupport_pet_path, method: :post, params: {id: @pet.id}, remote: true, class: "btn btn-outline-primary unsupport-btn", id: "unsupport-btn" %>
-      <% else %>
-        <%= link_to "Support", support_pet_path, remote: true, method: :post, params: {id: @pet.id}, class: "btn btn-primary support-btn", id: "support-btn" %>
+  <main class="row">
+    <!-- PET'S PROFILE PHOTO -->
+    <picture class="col-12 col-md-7 w-100 ml-0">
+      <%= image_tag profile_photo_select(@pet), class: "img-thumbnail rounded profile-photo border-primary", alt: @pet.img_alt_text %>
+    </picture>  
+    <section class="col-12 col-md-5">
+      <h4 class="mt-3">Profile Details</h4>
+      <ul class= "list-group list-group-flush">
+        <li class="list-group-item bg-transparent pl-0">
+          <small class="mini-top-title mb-0">Animal Type</small>
+          <p class="lead">
+            <span class="badge badge-pill badge-info">
+              <i class="fas fa-<%= display_gender(@pet) %>"></i>
+            </span>
+            <span class="badge badge-pill badge-primary">
+              <%= @pet.category.name %>
+            </span>
+            <span class="badge badge-pill badge-secondary">
+              <%= @pet.display_breed %>
+            </span>
+          </p>
+        </li>
+        <li class="list-group-item bg-transparent pl-0">
+          <div class="row">
+            <div class="col">
+              <small class="mini-top-title mb-0">Date of Birth</small>
+              <p class="lead"><%= @pet.display_dob %></p>
+            </div>
+            <div class="col">
+              <small class="mini-top-title mb-0">Age</small>
+              <p class="lead"><%= @pet.display_age %></p>
+            </div>
+          </div>
+        </li>
+        <% if @pet.bio? %>
+          <li class="list-group-item bg-transparent pl-0">
+            <small class="mini-top-title mb-0">Short Bio</small>
+            <p class="lead"><%= @pet.bio %></p>
+          </li>
+        <% end %>
+        <% if @pet.instagram? %>
+          <li class="list-group-item bg-transparent pl-0">
+            <small class="mini-top-title mb-0">Instagram</small>
+            <p class="lead">@<%= @pet.instagram %></p>
+          </li>
+        <% end %>        
+      </ul>
+      <!-- SUPPORT ACTION FOR USERS OTHER THAN OWNER -->
+      <% unless user_is_pet_owner(@pet) %>
+        <% if current_user_is_supporting(current_user.id, @pet.id) %>
+          <h4 class="mt-2">Become <%= @pet.name.titlecase %>'s Sup-paw-ter!</h4>
+          <p>Being a sup-paw-ter enables you to access <%= @pet.name.titlecase %>'s pictorial journal when it's available.</p>
+          <div class="my-4">
+            <%= link_to "Supporting", unsupport_pet_path, method: :post, params: {id: @pet.id}, remote: true, class: "btn btn-outline-primary btn-lg btn-block unsupport-btn", id: "unsupport-btn" %>
+          </div>
+        <% else %>
+          <div class="my-4">
+            <%= link_to "Support", support_pet_path, remote: true, method: :post, params: {id: @pet.id}, class: "btn btn-primary btn-lg btn-block support-btn", id: "support-btn" %>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-
-    <%= link_to "Back to Paw Pets", pets_path, class: "btn btn-outline-primary my-3 mb-5" %>
+    </section>
   </main>
+  
+  <!-- PET'S OWNER DETAILS SECTION & JOURNAL LINK -->
+  <section class="row row-cols-1 row-cols-md-2 mt-5">
+    <article class="col mb-5">
+      <div class="card bg-light border-primary mb-3 h-100">
+        <div class="card-header mini-top-title py-3"><%= @pet.name.titlecase %>'s Pawrent</div>
+        <div class="card-body">
+          <h5 class="card-title subtitle text-primary"><%= @pet.owner.username.titlecase %></h5>
+          <p><i class="fas fa-map-marker-alt text-info mr-2"></i><%= @pet.display_owner_location %></p>
+          <% if @pet.owner.bio? %>
+            <p class="card-text"><%= @pet.owner.bio %></p>
+          <% end %>
+          <% unless user_is_pet_owner(@pet) %>
+            <% if @pet.owner.paypal_me? %>
+              <%= link_to "Donate Fund", "https://www.paypal.com/paypalme/#{@pet.owner.paypal_me}", class: "btn btn-info" %>
+            <% else %>
+              <% if @pet.owner.paypal_me? && user_is_pet_owner(@pet) %>
+                <%= link_to "Add Funding Option", edit_user_registration_path, class: "btn btn-primary" %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </article>
+    <article class="col mb-5">
+      <div class="card bg-light border-primary mb-3 h-100">
+        <div class="card-header mini-top-title py-3"><%= @pet.name.titlecase %>'s Sup-paw-ters corner</div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-light lead"><%= @pet.name.titlecase %>'s latest update </li>
+          <li class="list-group-item bg-light d-flex justify-content-between align-items-center">
+            <span><i class="fas fa-heart text-info mr-2"></i>Total sup-paw-ters</span>
+            <span class="badge badge-secondary badge-pill"><%= @pet.supporters.count %></span>
+          </li>
+          <li class="list-group-item bg-light"><i class="far fa-calendar-alt text-info mr-2"></i>Journal will be available soon!</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- PET'S SIBLINGS IF NOT NIL -->
+  <% if siblings_exist(@pet) %>
+    <section class="row">
+      <%= render "/shared/siblings" %>
+    </section>
+  <% end %>
+
+  <footer>
+    <%= link_to "Back to Pawlour", pets_path, class: "btn btn-outline-primary my-4 mb-5" %>
+  </footer>
 </section>
-
-
-<p>
-  <strong>Location:</strong>
-  <%= @pet.display_owner_location %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @pet.display_age %>
-</p>
-
-<p>
-  <strong>Owner:</strong>
-  <%= @pet.owner.username %>
-</p>
-
-<p>
-  <strong>Breed:</strong>
-  <%= @pet.breed_id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @pet.name %>
-</p>
-
-<p>
-  <strong>Dob:</strong>
-  <%= @pet.display_dob %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @pet.gender %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @pet.bio %>
-</p>
-
-<p>
-  <strong>Instagram:</strong>
-  <%= @pet.instagram %>
-</p>
-
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Back', pets_path %>
+<!-- PET OWNER ACCESS ONLY -->
+<% if user_is_pet_owner(@pet) %>
+  <aside>
+    <%= render 'shared/pet_owner' %>
+  </aside>
+<% end %>

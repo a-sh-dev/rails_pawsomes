@@ -1,6 +1,14 @@
-<h1>Editing Pet</h1>
+<section class="container my-5">
+  <header class="mb-5">
+    <h1 class="display-4">Edit <%= @pet.name.titlecase %>'s Profile</h1>
+    <h2 class="subtitle">Change is inevitable</h2>
+  </header>
 
-<%= render 'form', pet: @pet %>
+  <main class="row align-items-center">
+    <%= render 'form', pet: @pet %>
+  </main>
 
-<%= link_to 'Show', @pet %> |
-<%= link_to 'Back', pets_path %>
+  <footer class="row my-3">
+    <%= link_to "Back", pets_path, class: "btn btn-outline-primary my-3 mb-3" %>
+  </footer>
+</section>
