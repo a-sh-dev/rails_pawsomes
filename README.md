@@ -10,12 +10,6 @@ A link to the GitHub repo
 https://github.com/a-sh-dev/rails_pawsomes
 ```
 
-Deployed Heroku link URL
-
-```
-https://pawsomes.herokuapp.com/
-```
-
 ![Home](./docs/final_ss/pawpets_01_home.png)   
 
 More screenshots coming  ↓  
@@ -47,19 +41,27 @@ On registration, users will be divided into two major types: pet owners, and reg
 - (Future release) Pet Journal is only postable by pet owners and viewable by the pet supporters. Journal must have photo attachment at least one.
 - Fund payment – via PayPal.me external link that will be set up by the user through simple instructions
 
+
+
 # User stories
 
-
-
 - As a **pet owner**, Jenna takes a lot of photos of Maxie her Persian cat and has found that her friends love seeing the photos when she posted them on her private Instagram account. She wants to keep her Instagram account private and opening a new account exclusively for Maxie is quite overwheling for Jenna. She needs an online platform where she could show the world how beautiful Maxie is!
+
 - As a **pet owner**, Piper lost her dear dog, Darling, a few years ago. She has found it hard to get a new dog to replace Darling. She doesn't use Instagram or Facebook or any other social media. Piper has benefited from seeing photos or videos of other dogs from google searches and YouTube videos. She would love to get more interactions from just seeing generic photos on the web.
+
 - As a **pet owner**, Leon is a high-school student and is inseparable from Kiko, his 11 years senior British shorthair cat. Kiko's health has been declining and Leon has been thinking to get some extra funds or help from other people to help him with any VET costs for Kiko.
+
 - As a **pet owner** who owns Cha-cha, Stef's tabby cat is a popular celeb-gram that has more than 5000 followers. She wants to gain more exposure and followers outside Instagram.
+
 - As an **animal lover**, Ronald has always wanted to own a pet, not only it helps him to reduce anxiety and depression, but also for a companion. However, Ronald is unfortunately highly allergic to animals. He's seeking treatment for his allergies. In the meantime, he wants to get as much information as possible from real pet owners so one day hopefully he's prepared when he's able to raise one himself.
+
+  
 
 # Sitemap
 
 ![Sitemap](./docs/sitemap.png)   
+
+
 
 # Wireframes
 
@@ -149,6 +151,8 @@ There are two kinds of users that can be registered, pet owners and regular user
 
 **Pets** are the main products of the Pawesomes app. The Pet model can be defined as the 'fattest' model for this app. Pawesomes app is an online platform or community which is also like a social media but with exclusive animal contents as its main purpose is to reduce stress and disctractions from the overwhelming social media content.
 
+
+
 # Tech Stack & Third Party Services
 
 ## Core
@@ -168,12 +172,15 @@ There are two kinds of users that can be registered, pet owners and regular user
 
 ## Deployment & Host
 
-- Heroku
+- <s>Heroku</s>
+- TBA
 
 ## Front-End
 
 - Bootstrap 4
 - Font Awesome
+
+
 
 # Project's Models & The Active Record Associations
 
@@ -210,6 +217,8 @@ There are two kinds of users that can be registered, pet owners and regular user
 - Pet also has one attached profile photo through Active Records
 - Pet has many Supports and many Supporters (Users)
 
+
+
 # Implemented Database Relations
 
 ## Final ERD diagram
@@ -219,6 +228,8 @@ There are two kinds of users that can be registered, pet owners and regular user
 ↑  The grey coloured entities are postponed features
 
 Using a single User model, two different types or roles of Users can be created. A role attribute is used to enable the distinct roles. Throughout the Views configurations, User authorisations are made based on the roles to enable few features to be displayed by the help of Devise's `current_user` and `user_signed_in?` features. Through the Support join table, Pets can be supported and have many supporters, while Supporter (from User table) can support many Pets. 
+
+
 
 # Database Schema Design
 
@@ -293,6 +304,8 @@ add_foreign_key "users", "locations"
 - Issues with `Location` model. Initially planned to use `simple_form` benefit of `country_select` gem to have the `country`, `state`, and `city` to be pre-populated with Javascript so user can select instead of typing their location attributes. However, the intial implementation failed, so currently it duplicates the location ids when it matches existing ones. Perhaps a better future implementation would be having each country, state and city to have its own model, or implement Google's geolocation instead.
 - Issues with `Support` controller and routes. On the Pet's profile or `show.html.erb`, the action to 'SUPPORT' and 'UNSUPPORT' pet have not been sucessfully implemented. Error with pet not found. I used this method from modifying an Instagram clone rails project that is 5-6 years old. Hope to be able to fix this in the future and implement my own methods to work.
 
+
+
 # Future Improvements
 
 Other than fixing the known issues, possible future improvements:
@@ -304,6 +317,8 @@ Other than fixing the known issues, possible future improvements:
 - More Admin features to look after the community, such as tracking users and checking the credibility of the pet owners. Ensuring that all the funds to be donated to the pet owners go to the real pet owners, not fake accounts. Perhaps  there should be a function where Admin can first approve pet owners before they post any pets and ask for any funding. May involve cross-checking between submitted Instagram account and PayPal.me account. 
 - Advanced Search pets feature.
 - Paginations feature instead of infinite scrolling.
+
+
 
 # Tasks Allocation – Project Management
 
